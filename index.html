@@ -1,768 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fernando Claudio | Planejamento Financeiro · Construindo legados</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fernando Claudio | Assessor de Investimentos · Alta Renda & Fee Based</title>
+<meta name="description" content="Assessoria de investimentos fee based para alta renda, C-levels e profissionais liberais. Planejamento sem conflito de interesse, com rigor técnico e transparência radical.">
+<meta name="keywords" content="assessor de investimentos, fee based, planejamento financeiro, alta renda, segunda opinião investimentos, Ribeirão Preto">
+<meta name="author" content="Fernando de Oliveira Claudio">
+<link rel="canonical" href="https://www.fernandoclaudio.com.br/">
 
-    <style>
-        :root {
-            --navy:   #08172B;
-            --navy2:  #0E2340;
-            --gold:   #B8965A;
-            --gold-lt:#D4B07A;
-            --cream:  #F7F4EF;
-            --text:   #1A2535;
-            --muted:  #6B7A8D;
-            --border: rgba(184,150,90,0.18);
-            --white:  #FFFFFF;
-            --ease:   cubic-bezier(.4,0,.2,1);
-        }
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Fernando Claudio | Assessor de Investimentos · Alta Renda & Fee Based">
+<meta property="og:description" content="Planejamento financeiro sem conflito de interesse. Modelo fee based, rigor técnico e uma segunda opinião honesta sobre sua carteira.">
+<meta property="og:url" content="https://www.fernandoclaudio.com.br/">
+<meta property="og:image" content="https://www.fernandoclaudio.com.br/assets/fernando-perfil.jpg">
+<meta name="twitter:card" content="summary_large_image">
 
-        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400;1,8..60,500&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
 
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--cream);
-            color: var(--text);
-            line-height: 1.65;
-            overflow-x: hidden;
-        }
-
-        /* ── Tipografia display ── */
-        .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
-
-        /* ── Layout ── */
-        .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-        .section { padding: 96px 0; }
-        .section--dark { background: var(--navy); color: #c8d4e0; }
-        .section--cream { background: var(--cream); }
-        .section--white { background: var(--white); }
-
-        /* ── Headings ── */
-        .eyebrow {
-            font-size: 11px;
-            font-weight: 500;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 16px;
-            display: block;
-        }
-        h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; line-height: 1.2; }
-        h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); }
-        h2 { font-size: clamp(2rem, 4vw, 3rem); }
-        h3 { font-size: 1.35rem; font-weight: 600; }
-
-        /* ── Botões ── */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 28px;
-            border-radius: 3px;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.25s var(--ease);
-        }
-        .btn-gold {
-            background: var(--gold);
-            color: var(--navy);
-            border: 1px solid var(--gold);
-        }
-        .btn-gold:hover { background: var(--gold-lt); border-color: var(--gold-lt); transform: translateY(-1px); }
-        .btn-ghost {
-            background: transparent;
-            color: rgba(255,255,255,0.85);
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-        .btn-ghost:hover { border-color: var(--gold); color: var(--gold-lt); }
-        .btn-outline-dark {
-            background: transparent;
-            color: var(--navy);
-            border: 1px solid rgba(8,23,43,0.35);
-        }
-        .btn-outline-dark:hover { background: var(--navy); color: white; }
-
-        /* ══════════════════════════════
-           NAVBAR
-        ══════════════════════════════ */
-        .navbar {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            padding: 18px 0;
-            transition: background 0.3s, box-shadow 0.3s;
-        }
-        .navbar.scrolled {
-            background: rgba(8,23,43,0.97);
-            box-shadow: 0 1px 0 rgba(184,150,90,0.15);
-        }
-        .navbar-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .navbar-brand {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            color: white;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-        .navbar-brand span { color: var(--gold); }
-        .navbar-links { display: flex; gap: 32px; list-style: none; }
-        .navbar-links a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 13px;
-            letter-spacing: 0.3px;
-            transition: color 0.2s;
-        }
-        .navbar-links a:hover { color: var(--gold-lt); }
-        .navbar-cta { display: flex; align-items: center; gap: 12px; }
-
-        /* Invés Link */
-        .inves-link {
-            color: inherit;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.2s ease;
-        }
-        
-        .inves-link:hover {
-            color: #00B4A0; /* cor da Invés */
-        }
-
-        /* hamburger */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 4px;
-        }
-        .hamburger span {
-            display: block; width: 22px; height: 1.5px;
-            background: white; transition: all 0.3s;
-        }
-        .mobile-menu {
-            display: none;
-            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-            background: var(--navy);
-            z-index: 99;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 32px;
-        }
-        .mobile-menu.open { display: flex; }
-        .mobile-menu a {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            color: white;
-            text-decoration: none;
-        }
-        .mobile-menu a:hover { color: var(--gold-lt); }
-        .mobile-close {
-            position: absolute; top: 20px; right: 24px;
-            background: none; border: none; color: white;
-            font-size: 1.5rem; cursor: pointer;
-        }
-
-        /* ══════════════════════════════
-           HERO
-        ══════════════════════════════ */
-        .hero {
-            min-height: 100vh;
-            background: var(--navy);
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute; inset: 0;
-            background:
-                radial-gradient(ellipse 60% 60% at 70% 50%, rgba(184,150,90,0.06) 0%, transparent 70%),
-                radial-gradient(ellipse 40% 80% at 10% 80%, rgba(14,35,64,0.8) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        /* Decorative line */
-        .hero::after {
-            content: '';
-            position: absolute;
-            right: 0; top: 0; bottom: 0;
-            width: 1px;
-            background: linear-gradient(to bottom, transparent, rgba(184,150,90,0.3), transparent);
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 80px;
-            align-items: center;
-            width: 100%;
-            padding: 120px 0 80px;
-        }
-
-        .hero-kicker {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 28px;
-        }
-        .hero-kicker-line {
-            width: 40px; height: 1px;
-            background: var(--gold);
-        }
-        .hero-kicker span {
-            font-size: 11px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--gold);
-            font-weight: 500;
-        }
-
-        .hero h1 {
-            color: white;
-            margin-bottom: 8px;
-            font-weight: 300;
-        }
-        .hero h1 em {
-            font-style: italic;
-            color: var(--gold-lt);
-        }
-
-        .hero-subtitle {
-            font-size: 1.05rem;
-            color: rgba(255,255,255,0.55);
-            margin-bottom: 36px;
-            font-weight: 300;
-            max-width: 480px;
-        }
-
-        .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
-
-        .trust-bar {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            flex-wrap: wrap;
-        }
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 0 20px;
-            border-right: 1px solid rgba(255,255,255,0.1);
-            font-size: 12px;
-            color: rgba(255,255,255,0.5);
-        }
-        .trust-item:first-child { padding-left: 0; }
-        .trust-item:last-child { border-right: none; }
-        .trust-item strong { color: rgba(255,255,255,0.85); font-weight: 500; display: block; font-size: 13px; }
-
-        /* Photo side */
-        .hero-photo-wrap {
-            position: relative;
-            flex-shrink: 0;
-        }
-        .hero-photo-frame {
-            width: 280px;
-            height: 360px;
-            border-radius: 2px;
-            overflow: hidden;
-            border: 1px solid rgba(184,150,90,0.25);
-            position: relative;
-        }
-        .hero-photo-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(20%);
-        }
-        .hero-photo-frame::before {
-            content: '';
-            position: absolute; inset: 0;
-            background: linear-gradient(to top, rgba(8,23,43,0.5) 0%, transparent 50%);
-            z-index: 1;
-        }
-        /* Decorative corner accents */
-        .hero-photo-wrap::before,
-        .hero-photo-wrap::after {
-            content: '';
-            position: absolute;
-            width: 24px; height: 24px;
-            border-color: var(--gold);
-            border-style: solid;
-        }
-        .hero-photo-wrap::before {
-            top: -8px; left: -8px;
-            border-width: 1px 0 0 1px;
-        }
-        .hero-photo-wrap::after {
-            bottom: -8px; right: -8px;
-            border-width: 0 1px 1px 0;
-        }
-
-        /* ══════════════════════════════
-           SOBRE
-        ══════════════════════════════ */
-        .sobre-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: start;
-        }
-        .sobre-text p {
-            color: #4B5A6E;
-            margin-bottom: 20px;
-            font-size: 1.02rem;
-        }
-        .sobre-text p strong { color: var(--navy); }
-        .sobre-quote {
-            border-left: 2px solid var(--gold);
-            padding: 20px 28px;
-            background: rgba(184,150,90,0.05);
-            border-radius: 0 3px 3px 0;
-            margin-top: 32px;
-        }
-        .sobre-quote blockquote {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            font-style: italic;
-            color: var(--navy);
-            line-height: 1.5;
-        }
-        .sobre-quote cite {
-            display: block;
-            margin-top: 12px;
-            font-size: 12px;
-            font-style: normal;
-            color: var(--muted);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        .sobre-certs { display: flex; flex-direction: column; gap: 16px; }
-        .cert-card {
-            background: white;
-            border: 1px solid rgba(8,23,43,0.08);
-            border-left: 3px solid var(--gold);
-            padding: 20px 24px;
-            border-radius: 0 3px 3px 0;
-            transition: box-shadow 0.2s;
-        }
-        .cert-card:hover { box-shadow: 0 4px 20px rgba(8,23,43,0.07); }
-        .cert-card h4 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--gold);
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 6px;
-        }
-        .cert-card p { font-size: 14px; color: var(--muted); margin: 0; }
-        .cert-card strong { color: var(--text); }
-        .sobre-certs-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            color: var(--navy);
-            margin-bottom: 24px;
-        }
-
-        /* ══════════════════════════════
-           SERVIÇOS
-        ══════════════════════════════ */
-        .services-header { text-align: center; max-width: 560px; margin: 0 auto 60px; }
-        .services-header h2 { color: white; margin-bottom: 16px; }
-        .services-header p { color: rgba(255,255,255,0.5); font-size: 1rem; }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.06);
-        }
-        .service-item {
-            background: var(--navy2);
-            padding: 36px 30px;
-            transition: background 0.25s;
-            position: relative;
-            overflow: hidden;
-        }
-        .service-item::before {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 2px;
-            background: var(--gold);
-            transform: scaleX(0);
-            transition: transform 0.3s var(--ease);
-        }
-        .service-item:hover { background: rgba(184,150,90,0.06); }
-        .service-item:hover::before { transform: scaleX(1); }
-        .service-icon {
-            width: 40px; height: 40px;
-            border: 1px solid rgba(184,150,90,0.3);
-            border-radius: 3px;
-            display: flex; align-items: center; justify-content: center;
-            margin-bottom: 20px;
-            color: var(--gold);
-            font-size: 16px;
-        }
-        .service-item h3 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 15px;
-            font-weight: 500;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 10px;
-        }
-        .service-item p { font-size: 13.5px; color: rgba(255,255,255,0.45); line-height: 1.6; }
-
-        /* ══════════════════════════════
-           FEE BASED
-        ══════════════════════════════ */
-        .feebased-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        .feebased-visual {
-            position: relative;
-        }
-        .feebased-card {
-            background: var(--navy);
-            color: white;
-            padding: 40px;
-            border-radius: 3px;
-            border: 1px solid rgba(184,150,90,0.15);
-        }
-        .feebased-card h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
-            margin-bottom: 24px;
-            color: white;
-        }
-        .compare-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-top: 8px;
-        }
-        .compare-col { }
-        .compare-col-title {
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-        }
-        .compare-col-title.bad { color: rgba(255,255,255,0.3); border-bottom: 1px solid rgba(255,255,255,0.08); }
-        .compare-col-title.good { color: var(--gold); border-bottom: 1px solid rgba(184,150,90,0.3); }
-        .compare-item {
-            display: flex; align-items: flex-start; gap: 8px;
-            font-size: 13px; margin-bottom: 8px;
-        }
-        .compare-item.bad { color: rgba(255,255,255,0.35); }
-        .compare-item.good { color: rgba(255,255,255,0.85); }
-        .compare-item i { margin-top: 2px; flex-shrink: 0; font-size: 11px; }
-        .compare-item.bad i { color: rgba(255,255,255,0.2); }
-        .compare-item.good i { color: var(--gold); }
-
-        .feebased-text .eyebrow { color: var(--gold); }
-        .feebased-text h2 { color: var(--navy); margin-bottom: 20px; }
-        .feebased-text p { color: #4B5A6E; margin-bottom: 16px; font-size: 1rem; }
-        .feebased-text p strong { color: var(--navy); }
-
-        /* ══════════════════════════════
-           PÚBLICO
-        ══════════════════════════════ */
-        .publico-header { text-align: center; margin-bottom: 56px; }
-        .publico-header h2 { color: var(--navy); margin-bottom: 12px; }
-        .publico-header p { color: var(--muted); max-width: 500px; margin: 0 auto; }
-        .publico-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-        .publico-card {
-            background: white;
-            border: 1px solid rgba(8,23,43,0.08);
-            padding: 32px 26px;
-            border-radius: 3px;
-            transition: all 0.25s;
-            position: relative;
-        }
-        .publico-card:hover {
-            border-color: rgba(184,150,90,0.4);
-            box-shadow: 0 8px 32px rgba(8,23,43,0.07);
-            transform: translateY(-2px);
-        }
-        .publico-card-num {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            color: rgba(184,150,90,0.15);
-            line-height: 1;
-            margin-bottom: 12px;
-        }
-        .publico-card h3 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--navy);
-            margin-bottom: 10px;
-        }
-        .publico-card p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
-
-        /* ══════════════════════════════
-           FAQ
-        ══════════════════════════════ */
-        .faq-header { text-align: center; margin-bottom: 48px; }
-        .faq-header h2 { color: white; margin-bottom: 12px; }
-        .faq-header p { color: rgba(255,255,255,0.45); }
-        .faq-list { max-width: 680px; margin: 0 auto; }
-        .faq-item {
-            border-bottom: 1px solid rgba(255,255,255,0.07);
-        }
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 22px 0;
-            cursor: pointer;
-            color: rgba(255,255,255,0.85);
-            font-size: 15px;
-            font-weight: 400;
-            transition: color 0.2s;
-            gap: 16px;
-        }
-        .faq-question:hover { color: var(--gold-lt); }
-        .faq-question.open { color: var(--gold-lt); }
-        .faq-icon {
-            width: 20px; height: 20px;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0;
-            font-size: 10px;
-            color: rgba(255,255,255,0.4);
-            transition: all 0.25s;
-        }
-        .faq-question.open .faq-icon {
-            border-color: var(--gold);
-            color: var(--gold);
-            transform: rotate(45deg);
-        }
-        .faq-answer {
-            font-size: 14px;
-            color: rgba(255,255,255,0.45);
-            line-height: 1.7;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.35s var(--ease), padding 0.2s;
-            padding-bottom: 0;
-        }
-        .faq-answer.open {
-            max-height: 200px;
-            padding-bottom: 22px;
-        }
-
-        /* ══════════════════════════════
-           CTA FINAL
-        ══════════════════════════════ */
-        .cta-section {
-            text-align: center;
-            padding: 100px 0;
-        }
-        .cta-inner {
-            max-width: 580px;
-            margin: 0 auto;
-        }
-        .cta-inner h2 { color: var(--navy); margin-bottom: 16px; }
-        .cta-inner p { color: var(--muted); margin-bottom: 40px; font-size: 1.05rem; }
-        .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-
-        /* ══════════════════════════════
-           FOOTER
-        ══════════════════════════════ */
-        footer {
-            background: #040F1D;
-            color: rgba(255,255,255,0.4);
-            padding: 56px 0 32px;
-            font-size: 13px;
-        }
-        .footer-top {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 48px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            margin-bottom: 28px;
-        }
-        .footer-brand h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            color: white;
-            font-weight: 400;
-            margin-bottom: 8px;
-        }
-        .footer-brand h3 span { color: var(--gold); }
-        .footer-brand p { line-height: 1.7; }
-        .footer-col h4 {
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.6);
-            margin-bottom: 16px;
-        }
-        .footer-col a {
-            display: block;
-            color: rgba(255,255,255,0.35);
-            text-decoration: none;
-            margin-bottom: 8px;
-            transition: color 0.2s;
-        }
-        .footer-col a:hover { color: var(--gold-lt); }
-        .footer-social { display: flex; gap: 12px; margin-top: 16px; }
-        .footer-social a {
-            width: 34px; height: 34px;
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 3px;
-            display: flex; align-items: center; justify-content: center;
-            color: rgba(255,255,255,0.4);
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.2s;
-        }
-        .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-        .footer-compliance {
-            font-size: 11px;
-            color: rgba(255,255,255,0.2);
-            line-height: 1.6;
-            max-width: 780px;
-            text-align: justify;
-        }
-        .footer-copy { font-size: 11px; white-space: nowrap; }
-
-        /* ══════════════════════════════
-           WhatsApp float
-        ══════════════════════════════ */
-        .whatsapp-float {
-            position: fixed; bottom: 28px; right: 28px;
-            width: 54px; height: 54px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: white; font-size: 26px;
-            box-shadow: 0 4px 20px rgba(37,211,102,0.35);
-            z-index: 200;
-            text-decoration: none;
-            transition: transform 0.25s, box-shadow 0.25s;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 28px rgba(37,211,102,0.5);
-        }
-
-        /* ══════════════════════════════
-           RESPONSIVE
-        ══════════════════════════════ */
-        @media (max-width: 900px) {
-            .hero-grid { grid-template-columns: 1fr; gap: 40px; padding: 100px 0 60px; }
-            .hero-photo-wrap { display: flex; justify-content: center; order: -1; }
-            .hero-photo-frame { width: 200px; height: 260px; }
-            .sobre-grid { grid-template-columns: 1fr; gap: 48px; }
-            .services-grid { grid-template-columns: 1fr 1fr; }
-            .feebased-grid { grid-template-columns: 1fr; gap: 40px; }
-            .publico-grid { grid-template-columns: 1fr 1fr; }
-            .footer-top { grid-template-columns: 1fr 1fr; }
-            .navbar-links, .navbar-cta .btn { display: none; }
-            .hamburger { display: flex; }
-        }
-        @media (max-width: 600px) {
-            .section { padding: 64px 0; }
-            h2 { font-size: 1.8rem; }
-            .services-grid { grid-template-columns: 1fr; }
-            .compare-row { grid-template-columns: 1fr; }
-            .publico-grid { grid-template-columns: 1fr; }
-            .footer-top { grid-template-columns: 1fr; gap: 32px; }
-            .trust-bar { gap: 0; }
-            .trust-item { padding: 6px 14px; }
-            .hero-cta { flex-direction: column; }
-            .hero-cta .btn { width: 100%; justify-content: center; }
-        }
-
-        /* ── Animações de entrada ── */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
-        }
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Fernando Claudio — Assessoria de Investimentos",
+  "url": "https://www.fernandoclaudio.com.br/",
+  "image": "https://www.fernandoclaudio.com.br/assets/fernando-perfil.jpg",
+  "areaServed": "BR",
+  "founder": {
+    "@type": "Person",
+    "name": "Fernando de Oliveira Claudio",
+    "jobTitle": "Assessor de Investimentos",
+    "address": { "@type": "PostalAddress", "addressLocality": "Ribeirão Preto", "addressRegion": "SP", "addressCountry": "BR" },
+    "sameAs": ["https://www.linkedin.com/in/fernandodoc/", "https://instagram.com/ofernandodoc"]
+  },
+  "description": "Assessoria de investimentos fee based para alta renda, C-levels, profissionais liberais e empresas, com planejamento financeiro sem conflito de interesse."
+}
+</script>
 </head>
 <body>
 
-<!-- WhatsApp Flutuante -->
-<a href="https://api.whatsapp.com/send/?phone=5516981180180&text=Quero+revisar+meu+portf%C3%B3lio+de+investimentos%2C+conversar+sobre+planejamento+financeiro+e+entender+melhor+o+modelo+fee+based.&type=phone_number&app_absent=0&utm_source=chatgpt.com" class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">
+<a href="https://api.whatsapp.com/send/?phone=5516981180180&text=Quero+entender+melhor+o+modelo+fee+based+e+revisar+meu+planejamento+financeiro.&type=phone_number&app_absent=0" class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
 
 <!-- ══ NAVBAR ══ -->
 <nav class="navbar" id="navbar">
     <div class="container navbar-inner">
-        <a href="#" class="navbar-brand">Fernando <span>Claudio</span></a>
+        <a href="#" class="navbar-brand">Fernando Claudio <span class="mark">// FC</span></a>
         <ul class="navbar-links">
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#publico">Para quem</a></li>
+            <li><a href="#segunda-opiniao">Segunda opinião</a></li>
             <li><a href="ebooks.html">E-books</a></li>
+            <li><a href="artigos.html">Artigos</a></li>
             <li><a href="#faq">FAQ</a></li>
         </ul>
         <div class="navbar-cta">
-            <a href="https://bit.ly/agendamento_whatsapp_" class="btn btn-ghost" target="_blank">WhatsApp</a>
-            <a href="https://calendly.com/soufernando/30min" class="btn btn-gold" target="_blank">Agendar Reunião</a>
+            <a href="https://api.whatsapp.com/send/?phone=5516981180180&text=Quero+agendar+uma+conversa+sobre+planejamento+financeiro.&type=phone_number&app_absent=0" class="btn btn-ghost-dark" target="_blank">WhatsApp</a>
+            <a href="https://calendly.com/soufernando/30min" class="btn btn-primary" target="_blank"><span class="long">Agendar</span> Diagnóstico</a>
         </div>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
     </div>
 </nav>
 
-<!-- Menu Mobile -->
 <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-close" id="mobileClose" aria-label="Fechar"><i class="fas fa-times"></i></button>
+    <button class="mobile-close" id="mobileClose" aria-label="Fechar menu"><i class="fas fa-times"></i></button>
     <a href="#sobre" class="mobile-link">Sobre</a>
     <a href="#servicos" class="mobile-link">Serviços</a>
-    <a href="#publico" class="mobile-link">Para quem</a>
+    <a href="#segunda-opiniao" class="mobile-link">Segunda opinião</a>
     <a href="ebooks.html" class="mobile-link">E-books</a>
+    <a href="artigos.html" class="mobile-link">Artigos</a>
     <a href="#faq" class="mobile-link">FAQ</a>
-    <a href="https://tally.so/r/81LRlz" target="_blank" style="color: var(--gold-lt);">Agendar Reunião →</a>
+    <a href="https://calendly.com/soufernando/30min" target="_blank" class="mm-cta">Agendar diagnóstico →</a>
 </div>
 
 <!-- ══ HERO ══ -->
@@ -771,51 +86,33 @@
         <div class="hero-grid">
             <div class="hero-content">
                 <div class="hero-kicker">
-                    <div class="hero-kicker-line"></div>
-                    <span>Assessoria de Investimentos · Alta Renda</span>
+                    <span>Assessoria de investimentos · alta renda</span>
                 </div>
-                <h1>Fernando <em>de Oliveira</em> Claudio</h1>
+                <h1>Antes de investir mais,<br><span class="accent">entenda quem está do seu lado.</span></h1>
                 <p class="hero-subtitle">
-                    Planejamento financeiro sem conflito de interesse, investimentos por objetivos, rigor técnico e transparência radical para quem leva o patrimônio a sério.
+                    Meu nome é Fernando, assessor fee-based e planejador financeiro na Invés/XP. Trabalho por planejamento, não por comissão. O que muda na prática? Você está no centro de tudo.
                 </p>
                 <div class="hero-cta">
-                    <a href="https://tally.so/r/81LRlz" class="btn btn-gold" target="_blank">
-                        Diagnóstico Gratuito <i class="fas fa-arrow-right" style="font-size:11px;"></i>
-                    </a>
-                    <a href="https://bit.ly/agendamento_whatsapp_" class="btn btn-ghost" target="_blank">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
+                    <a href="https://calendly.com/soufernando/30min" class="btn btn-primary" target="_blank">Agendar diagnóstico gratuito <i class="fas fa-arrow-right"></i></a>
+                    <a href="#segunda-opiniao" class="btn btn-ghost-dark">Quero uma segunda opinião</a>
                 </div>
                 <div class="trust-bar">
-                    <div class="trust-item">
-                        <div>
-                            <strong>C-PRO I</strong>
-                            ANBIMA
-                        </div>
-                    </div>
-                    <div class="trust-item">
-                        <div>
-                            <strong>C-PRO R</strong>
-                            ANBIMA
-                        </div>
-                    </div>
-                    <div class="trust-item">
-                        <div>
-                            <strong>ANCORD</strong>
-                            Habilitado
-                        </div>
-                    </div>
-                    <div class="trust-item">
-                        <div>
-                            <strong>Fee Based</strong>
-                            Sem comissão
-                        </div>
-                    </div>
+                    <div class="trust-item"><strong>CPA / C-PRO I / C-PRO R</strong>ANBIMA</div>
+                    <div class="trust-item"><strong>ANCORD AAI</strong>Habilitado</div>
+                    <div class="trust-item"><strong>Fee Based</strong>Sem comissão</div>
+                    <div class="trust-item"><strong>200+</strong>Famílias e empresas</div>
                 </div>
             </div>
             <div class="hero-photo-wrap">
                 <div class="hero-photo-frame">
-                    <img src="minha-foto-corpo-inteiro-tratamento.jpeg" alt="Fernando de Oliveira Claudio">
+                    <img src="assets/fernando-perfil.jpg" alt="Fernando de Oliveira Claudio, assessor de investimentos" width="1200" height="918" fetchpriority="high">
+                </div>
+                <div class="hero-doc-float doc fade-up">
+                    <div class="doc-head"><span>extrato_atual.pdf</span><div class="dot-row"><span></span><span></span><span></span></div></div>
+                    <div class="doc-body">
+                        <div class="doc-line strike"><span class="lbl">Comissão embutida</span><span class="val">— oculta</span></div>
+                        <div class="doc-line ok"><span class="lbl">Fee based</span><span class="val">transparente</span></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -826,46 +123,32 @@
 <section id="sobre" class="section section--white">
     <div class="container">
         <div class="sobre-grid">
-            <div class="sobre-text fade-up">
+            <div class="fade-up" style="order:2;">
                 <span class="eyebrow">Sobre mim</span>
-                <h2 style="color: var(--navy); margin-bottom: 28px;">Liberdade financeira exige estratégia, não sorte</h2>
+                <h2 style="margin-bottom:26px;">Estratégia, não sorte, nem produto empurrado</h2>
                 <p>
-                    Prazer, meu nome é <strong>Fernando</strong>, assessor na <a href="https://www.inves.finance" target="_blank" rel="noopener noreferrer" class="inves-link">Invés</a>/XP. 
+                    Comecei minha carreira como teleatendente na Telefônica e trabalhei em multinacionais na área comercial. Sou Bacharel em Relações Internacionais, com MBA em Gestão em Vendas pela Fundace/USP. Foi no ambiente acadêmico que aprendi a enxergar negociação, risco, planejamento, pesquisa, desenvolvimento, estratégia e longo prazo com outros olhos. E é essa lente que uso até hoje.
                 </p>
                 <p>
-                    Atendo famílias e empresas do segmento <strong>alta renda (HNW, UHNW) e gestão de tesouraria corporativa</strong>. São mais de 200 famílias e empresas que confiam na minha assessoria e portfólios construídos com <strong>ética, transparência, objetivos e resultados</strong>. Minha atuação é respaldada pelas certificações <strong>ANBIMA CPA, C-PRO R, C-PRO I e ANCORD AAI</strong>.
-                </p>    
-                <p>
-                    Escolhi o modelo <strong>Fee Based</strong> para eliminar conflitos de interesse que existem no modelo comissionado tradicional. A <strong>minha remuneração é transparente, alinhada ao seu objetivo</strong> e resultado da sua carteira, <strong>não ao produto</strong>. Se o seu patrimônio cresce, a minha remuneração cresce, simples assim.
+                    Atendo famílias do segmento alta renda, C-levels, médicos, advogados, engenheiros, profissionais do agro, aviação civil, indústrias e empresas que precisam de agilidade com tesourarias complexas. Ao longo da minha carreira mais de 200 famílias confiaram na minha assessoria, construída com ética, transparência e foco em resultado, não em produto.
                 </p>
                 <p>
-                    Meu trabalho entrega o que realmente importa: <strong>visão 360° do patrimônio, otimização fiscal, planejamento financeiro, sucessório</strong> e um profissional que fala sua língua.
+                    Escolhi trabalhar exclusivamente no modelo <strong>fee based</strong> pois a minha remuneração vem do serviço prestado, nunca sobre comissão. Isso elimina o conflito de interesse que existe (quase sempre em silêncio) no modelo tradicional.
                 </p>
                 <div class="sobre-quote">
-                    <blockquote>"Ética e transparência são inegociáveis. O único interesse que vale é o crescimento do seu patrimônio."</blockquote>
+                    <blockquote>"O único interesse que deveria pesar numa sugestão é o crescimento do seu patrimônio. O resto é ruído."</blockquote>
                     <cite>Fernando · Assessor de Investimentos</cite>
                 </div>
-            </div>
-            <div class="fade-up" style="transition-delay: 0.15s;">
-                <p class="sobre-certs-title">Certificações & Habilitações</p>
-                <div class="sobre-certs">
-                    <div class="cert-card">
-                        <h4>C-PRO I · ANBIMA</h4>
-                        <p><strong>Especialista em Investimentos</strong> — certificação avançada para consultoria de alto nível e atendimento a investidores qualificados.</p>
-                    </div>
-                    <div class="cert-card">
-                        <h4>C-PRO R · ANBIMA</h4>
-                        <p><strong>Alta Renda</strong> — habilitação profissional para relacionamento a investidores de alta renda com rigor técnico e compliance.</p>
-                    </div>
-                    <div class="cert-card">
-                        <h4>ANCORD</h4>
-                        <p><strong>Assessor de Investimentos</strong> — habilitação técnica e regulatória para atuar no mercado financeiro.</p>
-                    </div>
-                    <div class="cert-card">
-                        <h4>Fee Based</h4>
-                        <p><strong>Sem conflito de interesse</strong> — remuneração diretamente alinhada ao seu resultado, não a produtos ou comissões.</p>
-                    </div>
+                <div class="certs-row">
+                    <div class="cert-card"><h4>C-PRO I · ANBIMA</h4><p>Especialista em Investimentos (certificação para consultoria de alto nível).</p></div>
+                    <div class="cert-card"><h4>C-PRO R · ANBIMA</h4><p>Habilitação para relacionamento com investidores de alta renda.</p></div>
+                    <div class="cert-card"><h4>ANCORD AAI</h4><p>Habilitação técnica e regulatória para atuação no mercado financeiro.</p></div>
+                    <div class="cert-card"><h4>Base · Ribeirão Preto</h4><p>Atendimento presencial em RP e remoto com a mesma qualidade, em todo o Brasil.</p></div>
                 </div>
+            </div>
+            <div class="sobre-photo fade-up" style="order:1; transition-delay:.1s;">
+                <img src="assets/fernando-sorrindo.jpg" alt="Fernando Claudio em seu escritório" width="1200" height="918" loading="lazy">
+                <div class="sobre-photo-tag">Interesse alinhado <span>= </span> patrimônio do cliente</div>
             </div>
         </div>
     </div>
@@ -876,84 +159,92 @@
     <div class="container">
         <div class="services-header fade-up">
             <span class="eyebrow">O que faço</span>
-            <h2>Soluções completas para patrimônio</h2>
-            <p>Atendimento exclusivo para Alta Renda, HNW e UHNW.</p>
+            <h2 style="color:var(--paper-on-dark);">Planejamento completo para quem tem patrimônio e quer tranquilidade durante a transmissão do seu legado.</h2>
         </div>
         <div class="services-grid fade-up">
             <div class="service-item">
-                <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-                <h3>Planejamento Financeiro</h3>
-                <p>Análise de perfil, definição de objetivos, organização do fluxo de caixa e estratégia patrimonial completa.</p>
+                <div class="service-icon"><i class="fas fa-compass"></i></div>
+                <h3>Planejamento financeiro</h3>
+                <p>Diagnóstico de perfil, objetivos claros e estratégia patrimonial construída de trás para frente, do objetivo até o produto.</p>
             </div>
             <div class="service-item">
-                <div class="service-icon"><i class="fas fa-university"></i></div>
-                <h3>Renda Fixa & Variável</h3>
-                <p>Acesso aos melhores produtos do mercado nacional para rentabilizar e diversificar seu capital com segurança.</p>
+                <div class="service-icon"><i class="fas fa-scale-balanced"></i></div>
+                <h3>Renda fixa & variável</h3>
+                <p>Arquitetura aberta: acesso ao que há de melhor no mercado, sem viés de prateleira própria.</p>
             </div>
             <div class="service-item">
-                <div class="service-icon"><i class="fas fa-globe"></i></div>
-                <h3>Internacional & Offshore</h3>
-                <p>Diversificação global com proteção patrimonial em moedas fortes e estruturas internacionais eficientes.</p>
+                <div class="service-icon"><i class="fas fa-earth-americas"></i></div>
+                <h3>Internacional & offshore</h3>
+                <p>Diversificação em moeda forte e estruturas internacionais eficientes para proteger patrimônio do risco Brasil.</p>
             </div>
             <div class="service-item">
-                <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>Proteção & Sucessão</h3>
-                <p>Proteção estratégica, blindagem patrimonial e planejamento sucessório para transmitir seu legado com tranquilidade.</p>
+                <div class="service-icon"><i class="fas fa-shield-halved"></i></div>
+                <h3>Proteção & sucessão</h3>
+                <p>Blindagem patrimonial e planejamento sucessório para transmitir o que você construiu sem desgaste ou surpresa.</p>
             </div>
             <div class="service-item">
-                <div class="service-icon"><i class="fas fa-briefcase"></i></div>
-                <h3>Soluções Corporate</h3>
-                <p>Gestão de tesouraria para empresas de médio e grande porte: clínicas, agronegócio, tecnologia e construção civil.</p>
+                <div class="service-icon"><i class="fas fa-building-columns"></i></div>
+                <h3>Tesouraria corporativa</h3>
+                <p>Gestão de caixa para empresas, crédito, financiamento e home equity (do agronegócio à saúde) com eficiência, liquidez e segurança planejadas.</p>
             </div>
             <div class="service-item">
-                <div class="service-icon"><i class="fas fa-piggy-bank"></i></div>
-                <h3>Previdência Privada</h3>
-                <p>Eficiência fiscal, planejamento sucessório e complemento de renda — estruturado com inteligência tributária.</p>
+                <div class="service-icon"><i class="fas fa-receipt"></i></div>
+                <h3>Eficiência tributária</h3>
+                <p>Previdência, sucessão e estrutura de investimentos pensadas para reduzir a conta de imposto de forma legítima.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ══ FEE BASED ══ -->
-<section class="section section--cream">
+<!-- ══ FEE BASED / COMPARAÇÃO ══ -->
+<section class="section section--paper">
     <div class="container">
-        <div class="feebased-grid">
-            <div class="feebased-visual fade-up">
-                <div class="feebased-card">
-                    <h3>Por que o modelo Fee Based importa?</h3>
-                    <div class="compare-row">
-                        <div class="compare-col">
-                            <div class="compare-col-title bad">Modelo tradicional</div>
-                            <div class="compare-item bad"><i class="fas fa-times"></i> Comissão por produto vendido</div>
-                            <div class="compare-item bad"><i class="fas fa-times"></i> Incentivo para churning</div>
-                            <div class="compare-item bad"><i class="fas fa-times"></i> Produto em 1º lugar</div>
-                            <div class="compare-item bad"><i class="fas fa-times"></i> Falta de transparência total</div>
-                        </div>
-                        <div class="compare-col">
-                            <div class="compare-col-title good">Fee Based</div>
-                            <div class="compare-item good"><i class="fas fa-check"></i> Remuneração pelo serviço</div>
-                            <div class="compare-item good"><i class="fas fa-check"></i> Interesse 100% alinhado</div>
-                            <div class="compare-item good"><i class="fas fa-check"></i> Arquitetura aberta</div>
-                            <div class="compare-item good"><i class="fas fa-check"></i> Transparência radical</div>
-                        </div>
+        <div class="compare-grid">
+            <div class="compare-text fade-up">
+                <span class="eyebrow">Modelo de trabalho</span>
+                <h2>O extrato não mente. A pergunta é: - Alguém já leu o seu com atenção?</h2>
+                <p>No modelo comissionado, o assessor ganha mais quando indica o produto que <strong>paga mais</strong>, não o que serve melhor a você. É um conflito estrutural, mesmo quando ninguém age de má-fé.</p>
+                <p>No <strong>fee based</strong>, minha remuneração vem do serviço, não do produto. Se o seu patrimônio cresce de forma consistente, eu ganho. Não porque vendi algo, mas porque entreguei resultado consistente.</p>
+                <a href="#segunda-opiniao" class="btn btn-outline" style="margin-top:8px;">Ver isso na prática <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="fade-up" style="transition-delay:.12s;">
+                <div class="doc">
+                    <div class="doc-head"><span>comparativo_remuneracao.pdf</span><div class="dot-row"><span></span><span></span><span></span></div></div>
+                    <div class="doc-body">
+                        <div class="doc-line strike"><span class="lbl">Comissão sobre produto</span><span class="val">variável, oculta <span class="doc-tag bad">evitar</span></span></div>
+                        <div class="doc-line strike"><span class="lbl">Troca de produto (churning)</span><span class="val">incentivada <span class="doc-tag bad">conflito</span></span></div>
+                        <div class="doc-line strike"><span class="lbl">Prateleira própria</span><span class="val">prioridade comercial</span></div>
+                        <div class="doc-line ok"><span class="lbl">Fee sobre serviço</span><span class="val">fixo e declarado <span class="doc-tag good">claro</span></span></div>
+                        <div class="doc-line ok"><span class="lbl">Arquitetura aberta</span><span class="val">melhor produto, não o mais rentável p/ o banco</span></div>
+                        <div class="doc-line ok"><span class="lbl">Interesse do cliente</span><span class="val">= interesse do assessor <span class="doc-tag good">alinhado</span></span></div>
                     </div>
+                    <div class="doc-foot"><span>Fernando Claudio</span><span>fee based</span></div>
                 </div>
             </div>
-            <div class="feebased-text fade-up" style="transition-delay:0.15s;">
-                <span class="eyebrow">Modelo de trabalho</span>
-                <h2>Seus interesses em primeiro lugar</h2>
-                <p>
-                    No modelo comissionado, o assessor tem incentivo para recomendar o produto que paga mais. No <strong>Fee Based</strong>, essa equação muda completamente.
-                </p>
-                <p>
-                    Minha remuneração não depende do produto que você compra — depende do resultado que entrego. Isso elimina o conflito de interesse e coloca você, genuinamente, no centro de cada decisão.
-                </p>
-                <p>
-                    Com acesso à <strong>arquitetura aberta</strong>, você tem acesso às melhores soluções do mercado nacional e internacional, sem viés de produto.
-                </p>
-                <a href="https://tally.so/r/81LRlz" class="btn btn-outline-dark" target="_blank" style="margin-top:8px;">
-                    Quero entender melhor <i class="fas fa-arrow-right" style="font-size:11px;"></i>
-                </a>
+        </div>
+    </div>
+</section>
+
+<!-- ══ SEGUNDA OPINIÃO ══ -->
+<section id="segunda-opiniao" class="section section--dark">
+    <div class="container">
+        <div class="so-grid">
+            <div class="fade-up">
+                <span class="eyebrow">Sem trocar de assessor</span>
+                <h2 style="color:var(--paper-on-dark); margin-bottom:20px;">Já tem assessoria? Uma segunda opinião não custa nada — e pode valer muito.</h2>
+                <p style="max-width:480px;">Você não precisa romper com ninguém para descobrir quanto está pagando de taxas, se está concentrado demais num único produto e aumentando o risco desnecessário ou sem uma estrutura sucessória de fato. Eu leio o que já existe e devolvo um raio X com transparência radical.</p>
+                <ul class="so-steps">
+                    <li><div><h4>Você envia o que já tem</h4><p>Extrato, carteira, apólice ou relatório do seu assessor atual.</p></div></li>
+                    <li><div><h4>Analiso taxas, produtos e risco</h4><p>Onde há custo oculto, concentração de risco e conflito de interesse.</p></div></li>
+                    <li><div><h4>Você recebe um raio X claro</h4><p>Em linguagem direta, sem jargão e simples, e decide o que fazer com a informação.</p></div></li>
+                </ul>
+            </div>
+            <div class="so-card fade-up" style="transition-delay:.1s;">
+                <span class="eyebrow">Diagnóstico gratuito</span>
+                <h3>Segunda opinião sobre sua carteira</h3>
+                <p>30 minutos, sem powerpoint de vendas. Você sai sabendo exatamente onde está pagando mais do que deveria, e onde está exposto além do que imagina.</p>
+                <a href="https://tally.so/r/81LRlz" class="btn btn-primary" target="_blank">Agendar segunda opinião <i class="fas fa-arrow-right"></i></a>
+                <p class="so-card-note">Prefere WhatsApp? <a href="https://api.whatsapp.com/send/?phone=5516981180180&text=Quero+uma+segunda+opini%C3%A3o+sobre+minha+carteira+de+investimentos.&type=phone_number&app_absent=0" target="_blank" style="color:var(--petrol-lt); text-decoration:underline;">Fale comigo direto</a></p>
             </div>
         </div>
     </div>
@@ -964,40 +255,44 @@
     <div class="container">
         <div class="publico-header fade-up">
             <span class="eyebrow">Para quem é</span>
-            <h2 style="color: var(--navy);">Atendimento exclusivo e dedicado</h2>
-            <p>Minha atuação é focada em perfis que exigem nível técnico elevado e atenção personalizada.</p>
+            <h2>Atendimento dedicado para quem já resolveu o básico</h2>
         </div>
         <div class="publico-grid">
-            <div class="publico-card fade-up">
-                <div class="publico-card-num">01</div>
-                <h3>Alta Renda · HNW · UHNW</h3>
-                <p>Pessoas físicas com patrimônio relevante que precisam de gestão sofisticada, visão patrimonial 360° e planejamento sucessório.</p>
+            <div class="publico-card fade-up"><i class="fas fa-user-tie"></i><h3>C-levels & executivos</h3><p>Pouco tempo, alta renda tributável e decisões financeiras adiadas até faltar tempo para corrigir.</p></div>
+            <div class="publico-card fade-up" style="transition-delay:.05s;"><i class="fas fa-user-doctor"></i><h3>Médicos & Profissionais liberais</h3><p>Advogados, dentistas e engenheiros com renda alta e pouca estrutura de planejamento.</p></div>
+            <div class="publico-card fade-up" style="transition-delay:.1s;"><i class="fas fa-seedling"></i><h3>Agronegócio</h3><p>Produtores e empresas rurais com sazonalidade de caixa e necessidade de proteção patrimonial.</p></div>
+            <div class="publico-card fade-up" style="transition-delay:.15s;"><i class="fas fa-plane"></i><h3>Aviação civil & Pilotos</h3><p>Remuneração internacional, moeda estrangeira e planejamento tributário específico do setor.</p></div>
+            <div class="publico-card fade-up"><i class="fas fa-stamp"></i><h3>Cartórios & servidores públicos</h3><p>Renda estável de alto valor, com espaço real para eficiência fiscal e sucessão.</p></div>
+            <div class="publico-card fade-up" style="transition-delay:.05s;"><i class="fas fa-code"></i><h3>Programadores & Tech</h3><p>Remuneração variável, stock options e patrimônio digital que exigem estrutura própria.</p></div>
+            <div class="publico-card fade-up" style="transition-delay:.1s;"><i class="fas fa-briefcase"></i><h3>Empresários</h3><p>Tesouraria da empresa e patrimônio pessoal tratados como o que são: coisas diferentes.</p></div>
+            <div class="publico-card fade-up" style="transition-delay:.15s;"><i class="fas fa-globe"></i><h3>Turismo internacional</h3><p>Empresas com receita e despesa em múltiplas moedas e exposição cambial a gerenciar.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ E-BOOKS TEASER ══ -->
+<section class="section section--paper2">
+    <div class="container">
+        <div class="ebt-header fade-up">
+            <div>
+                <span class="eyebrow">Biblioteca gratuita</span>
+                <h2>Educação financeira antes da reunião</h2>
             </div>
-            <div class="publico-card fade-up" style="transition-delay:0.1s;">
-                <div class="publico-card-num">02</div>
-                <h3>Empresas & Tesouraria</h3>
-                <p>Empresas de médio e grande porte que precisam otimizar a gestão do caixa corporativo com eficiência e segurança.</p>
-            </div>
-            <div class="publico-card fade-up" style="transition-delay:0.2s;">
-                <div class="publico-card-num">03</div>
-                <h3>Profissionais Liberais</h3>
-                <p>Médicos, advogados, engenheiros e outros profissionais com alta renda e pouco tempo para cuidar do próprio patrimônio.</p>
-            </div>
-            <div class="publico-card fade-up" style="transition-delay:0.1s;">
-                <div class="publico-card-num">04</div>
-                <h3>Agronegócio</h3>
-                <p>Produtores e empresas do setor agrícola com necessidade de gestão eficiente do caixa, hedge e proteção patrimonial.</p>
-            </div>
-            <div class="publico-card fade-up" style="transition-delay:0.2s;">
-                <div class="publico-card-num">05</div>
-                <h3>Grupos de Saúde</h3>
-                <p>Clínicas, hospitais e grupos médicos que precisam de tesouraria estruturada e planejamento financeiro corporativo.</p>
-            </div>
-            <div class="publico-card fade-up" style="transition-delay:0.3s;">
-                <div class="publico-card-num">06</div>
-                <h3>Construtoras & Tech</h3>
-                <p>Empresas de construção civil e tecnologia com estrutura financeira em crescimento que buscam organização e eficiência.</p>
-            </div>
+            <a href="ebooks.html" class="btn btn-outline">Ver todos os e-books <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="ebt-grid fade-up">
+            <a href="landing-antes-de-investir.html" class="ebt-card">
+                <div class="ebt-cover"><span class="ec-tag">Guia para recomeçar</span><span class="ec-title">Antes de Investir, Entenda Para Onde Vai o Seu Dinheiro</span></div>
+                <div class="ebt-body"><span class="ebt-meta">20 min · 9 capítulos</span><p>Como sair das dívidas com estratégia e o que precisa estar pronto antes de investir fazer sentido.</p><span class="ebt-cta">Baixar gratuitamente <i class="fas fa-arrow-right"></i></span></div>
+            </a>
+            <a href="landing-custo-invisivel-carteira.html" class="ebt-card">
+                <div class="ebt-cover"><span class="ec-tag">Carteiras consolidadas</span><span class="ec-title">O Custo Invisível da Sua Carteira</span></div>
+                <div class="ebt-body"><span class="ebt-meta">25 min · 12 capítulos</span><p>Taxas, spreads e conflitos de interesse que raramente aparecem no extrato — com exemplos práticos.</p><span class="ebt-cta">Baixar gratuitamente <i class="fas fa-arrow-right"></i></span></div>
+            </a>
+            <a href="landing-plano-investidor-inteligente.html" class="ebt-card">
+                <div class="ebt-cover"><span class="ec-tag">Antes do produto, o plano</span><span class="ec-title">O Plano do Investidor Inteligente</span></div>
+                <div class="ebt-body"><span class="ebt-meta">25 min · 10 perguntas</span><p>As perguntas que transformam patrimônio em estratégia, com objetivos, prazos e prioridades.</p><span class="ebt-cta">Baixar gratuitamente <i class="fas fa-arrow-right"></i></span></div>
+            </a>
         </div>
     </div>
 </section>
@@ -1007,73 +302,43 @@
     <div class="container">
         <div class="faq-header fade-up">
             <span class="eyebrow">Perguntas frequentes</span>
-            <h2 style="color: white;">O que você precisa saber antes de começar</h2>
-            <p>Transparência começa antes da primeira reunião.</p>
+            <h2 style="color:var(--paper-on-dark);">O que você precisa saber antes de começar</h2>
         </div>
         <div class="faq-list fade-up">
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    O que é o modelo Fee Based e por que isso importa para mim?
-                    <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                </div>
-                <div class="faq-answer">
-                    No modelo Fee Based, minha remuneração é paga pelo serviço prestado — não por comissão dos produtos que você compra. Isso significa que meu interesse é idêntico ao seu: que seu patrimônio cresça. Não há incentivo para indicar um produto ruim porque ele paga comissão maior.
-                </div>
+                <div class="faq-question" onclick="toggleFaq(this)">O que é o modelo fee based e por que isso importa?<div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+                <div class="faq-answer">No fee-based, minha remuneração é paga pelo serviço prestado, não por comissão dos produtos que você compra. Meu interesse fica idêntico ao seu: que seu patrimônio cresça. Não há incentivo para indicar um produto ruim porque ele paga comissão maior.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Qual o perfil de cliente que você atende?
-                    <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                </div>
-                <div class="faq-answer">
-                    Atendo exclusivamente Alta Renda, HNW (High Net Worth), UHNW e empresas que precisam de gestão de tesouraria. Meu foco é em clientes que exigem nível técnico elevado, atenção personalizada e estratégia patrimonial sofisticada.
-                </div>
+                <div class="faq-question" onclick="toggleFaq(this)">Preciso trocar de assessor/consultor para ter uma segunda opinião?<div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+                <div class="faq-answer">Não. A segunda opinião é uma análise independente do que você já tem, sem compromisso de troca. Vou agregar valor na sua vida financeira e você decide o que fazer com o diagnóstico depois de vê-lo.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Você atende clientes em todo o Brasil?
-                    <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                </div>
-                <div class="faq-answer">
-                    Sim, atendo clientes em todo o Brasil. O atendimento pode ser presencial ou 100% remoto, com a mesma qualidade. A distância não compromete a profundidade do planejamento nem a qualidade do relacionamento.
-                </div>
+                <div class="faq-question" onclick="toggleFaq(this)">Qual o perfil de cliente que você atende?<div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+                <div class="faq-answer">Atendo principalmente alta renda, C-levels, profissionais liberais e empresas com tesouraria a organizar. Meu foco é em quem exige nível técnico elevado e atenção personalizada.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Como funciona o primeiro contato?
-                    <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                </div>
-                <div class="faq-answer">
-                    O primeiro passo é um diagnóstico gratuito — uma conversa sem compromisso para entender seu momento, seus objetivos e onde existem oportunidades de melhoria na estrutura atual. Só depois apresento uma proposta de trabalho, se fizer sentido para os dois lados.
-                </div>
+                <div class="faq-question" onclick="toggleFaq(this)">Você atende clientes em todo o Brasil?<div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+                <div class="faq-answer">Sim, em Ribeirão Preto (SP) e região com atendimento presencial e 100% remoto para o restante do Brasil, com a mesma qualidade e profundidade de planejamento.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Quais certificações você possui?
-                    <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                </div>
-                <div class="faq-answer">
-                    Possuo C-PRO I (especialista em investimentos — ANBIMA), C-PRO R (alta renda — ANBIMA) e certificação ANCORD. São as principais certificações do mercado para assessoria de alta complexidade e atendimento a investidores qualificados.
-                </div>
+                <div class="faq-question" onclick="toggleFaq(this)">Quais certificações você possui?<div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+                <div class="faq-answer">CPA (Certificação Profissional ANBIMA), C-PRO I (Consultor de Investimentos - Especialista ANBIMA), C-PRO R (Atendimento Alta Renda — ANBIMA) e Habilitação ANCORD AAI (Assessor de Investimentos). São certificações voltadas para assessoria de alta complexidade e rigor técnico, consultoria de investimentos e atendimento a investidores qualificados.</div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ══ CTA FINAL ══ -->
-<section class="section--white cta-section">
+<section class="section--paper cta-section">
     <div class="container">
         <div class="cta-inner fade-up">
-            <span class="eyebrow" style="display:block; text-align:center;">Próximo passo</span>
+            <span class="eyebrow no-line">Próximo passo</span>
             <h2>Pronto para uma assessoria sem conflito de interesse?</h2>
-            <p>Um diagnóstico gratuito para entender onde seu patrimônio pode ser mais eficiente. Sem compromisso, sem pressão.</p>
+            <p>Um diagnóstico gratuito para entender onde seu patrimônio pode ser mais eficiente. Sem compromisso, sem powerpoint de vendas.</p>
             <div class="cta-buttons">
-                <a href="https://tally.so/r/81LRlz" class="btn btn-gold" target="_blank" style="font-size:14px; padding:16px 36px;">
-                    Agendar Diagnóstico Gratuito <i class="fas fa-arrow-right" style="font-size:11px;"></i>
-                </a>
-                <a href="https://api.whatsapp.com/send/?phone=5516981180180&text=Quero+revisar+meu+portf%C3%B3lio+de+investimentos%2C+conversar+sobre+planejamento+financeiro+e+entender+melhor+o+modelo+fee+based.&type=phone_number&app_absent=0&utm_source=chatgpt.com" class="btn btn-outline-dark" target="_blank" style="font-size:14px; padding:16px 36px;">
-                    <i class="fab fa-whatsapp"></i> Falar no WhatsApp
-                </a>
+                <a href="https://tally.so/r/81LRlz" class="btn btn-primary" target="_blank">Agendar diagnóstico gratuito <i class="fas fa-arrow-right"></i></a>
+                <a href="https://api.whatsapp.com/send/?phone=5516981180180&text=Quero+revisar+meu+portf%C3%B3lio+de+investimentos+e+entender+melhor+o+modelo+fee+based.&type=phone_number&app_absent=0" class="btn btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</a>
             </div>
         </div>
     </div>
@@ -1084,79 +349,39 @@
     <div class="container">
         <div class="footer-top">
             <div class="footer-brand">
-                <h3>Fernando <span>Claudio</span></h3>
-                <p>Assessor de Investimentos.<br>Alta Renda · Wealth Management · Fee Based.</p>
+                <h3>Fernando <span class="mark">// Claudio</span></h3>
+                <p>Assessor de Investimentos.<br>Alta Renda · Fee Based · Planejamento Financeiro.</p>
                 <p style="margin-top:8px;">fernando.claudio@inves.finance</p>
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/in/fernandodoc/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="http://instagram.com/ofernandodoc" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://instagram.com/ofernandodoc" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="footer-col">
                 <h4>Navegação</h4>
                 <a href="#sobre">Sobre mim</a>
                 <a href="#servicos">Serviços</a>
-                <a href="#publico">Para quem é</a>
+                <a href="#segunda-opiniao">Segunda opinião</a>
                 <a href="ebooks.html">E-books</a>
+                <a href="artigos.html">Artigos</a>
                 <a href="#faq">FAQ</a>
             </div>
             <div class="footer-col">
                 <h4>Recursos</h4>
-                <a href="https://tally.so/r/81LRlz" target="_blank">Diagnóstico gratuito</a>
-                <a href="https://fernando-doc.streamlit.app/" target="_blank">Terminal Financeiro</a>
-                <a href="https://api.whatsapp.com/send/?phone=5516981180180&text=Quero+revisar+meu+portf%C3%B3lio+de+investimentos%2C+conversar+sobre+planejamento+financeiro+e+entender+melhor+o+modelo+fee+based.&type=phone_number&app_absent=0&utm_source=chatgpt.com" target="_blank">WhatsApp</a>
+                <a href="https://calendly.com/soufernando/30min" target="_blank">Diagnóstico gratuito</a>
+                <a href="https://fernando-doc.streamlit.app/" target="_blank">Terminal financeiro</a>
+                <a href="https://api.whatsapp.com/send/?phone=5516981180180" target="_blank">WhatsApp</a>
             </div>
         </div>
         <div class="footer-bottom">
             <p class="footer-compliance">
-                AVISO: Este é o site pessoal do assessor de investimentos Fernando de Oliveira Claudio. O investimento em ativos financeiros envolve riscos e desempenho passado não é garantia de resultados futuros. O conteúdo deste site tem caráter meramente informativo e não constitui recomendação de investimento nem oferta de valores mobiliários. O profissional é devidamente certificado e registrado junto aos órgãos reguladores (ANBIMA e ANCORD). Estratégias de investimento são discutidas de forma individualizada, respeitando o perfil e os objetivos de cada investidor.
+                AVISO: Este é o site pessoal do assessor de investimentos Fernando de Oliveira Claudio. O investimento em ativos financeiros envolve riscos e desempenho passado não é garantia de resultados futuros. O conteúdo deste site tem caráter meramente informativo e não constitui recomendação de investimento nem oferta de valores mobiliários. O profissional é devidamente certificado e habilitado junto à ANBIMA e à ANCORD. Estratégias de investimento são discutidas de forma individualizada, respeitando o perfil e os objetivos de cada investidor.
             </p>
-            <p class="footer-copy">© 2025 Fernando Claudio</p>
+            <p class="footer-copy">© 2026 Fernando Claudio</p>
         </div>
     </div>
 </footer>
 
-<script>
-    // Navbar scroll
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 40);
-    });
-
-    // Mobile menu
-    document.getElementById('hamburger').addEventListener('click', () => {
-        document.getElementById('mobileMenu').classList.add('open');
-    });
-    document.getElementById('mobileClose').addEventListener('click', () => {
-        document.getElementById('mobileMenu').classList.remove('open');
-    });
-    document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => {
-            document.getElementById('mobileMenu').classList.remove('open');
-        });
-    });
-
-    // FAQ
-    function toggleFaq(el) {
-        const answer = el.nextElementSibling;
-        const isOpen = el.classList.contains('open');
-        document.querySelectorAll('.faq-question').forEach(q => {
-            q.classList.remove('open');
-            q.nextElementSibling.classList.remove('open');
-        });
-        if (!isOpen) {
-            el.classList.add('open');
-            answer.classList.add('open');
-        }
-    }
-
-    // Scroll animations
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-            if (e.isIntersecting) { e.target.classList.add('visible'); }
-        });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
