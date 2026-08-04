@@ -1,253 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-books | Fernando Claudio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-books gratuitos | Fernando Claudio</title>
+<meta name="description" content="Biblioteca gratuita de e-books sobre planejamento financeiro, custos ocultos em carteiras de investimento e o modelo fee based — sem jargão.">
+<link rel="canonical" href="https://www.fernandoclaudio.com.br/ebooks.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="E-books gratuitos | Fernando Claudio">
+<meta property="og:description" content="Materiais gratuitos e diretos para entender seu próprio dinheiro antes do próximo passo.">
+<meta property="og:image" content="https://www.fernandoclaudio.com.br/assets/fernando-perfil.jpg">
 
-    <style>
-        :root {
-            --navy:   #08172B;
-            --navy2:  #0E2340;
-            --gold:   #B8965A;
-            --gold-lt:#D4B07A;
-            --cream:  #F7F4EF;
-            --text:   #1A2535;
-            --muted:  #6B7A8D;
-            --border: rgba(184,150,90,0.18);
-            --white:  #FFFFFF;
-            --ease: cubic-bezier(.4,0,.2,1);
-        }
-        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--cream);
-            color: var(--text);
-            line-height: 1.65;
-            overflow-x: hidden;
-        }
-        .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
-        .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-        .section { padding: 96px 0; }
-        .section--white { background: var(--white); }
-
-        .eyebrow {
-            font-size: 11px; font-weight: 500; letter-spacing: 3px;
-            text-transform: uppercase; color: var(--gold);
-            margin-bottom: 16px; display: block;
-        }
-        h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; line-height: 1.2; }
-        h1 { font-size: clamp(2.2rem, 4.5vw, 3.4rem); }
-        h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
-        h3 { font-size: 1.35rem; font-weight: 600; }
-
-        .btn {
-            display: inline-flex; align-items: center; gap: 10px;
-            padding: 14px 28px; border-radius: 3px;
-            font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
-            letter-spacing: 0.5px; text-decoration: none; cursor: pointer;
-            transition: all 0.25s var(--ease); border: none;
-        }
-        .btn-gold { background: var(--gold); color: var(--navy); border: 1px solid var(--gold); }
-        .btn-gold:hover { background: var(--gold-lt); border-color: var(--gold-lt); transform: translateY(-1px); }
-        .btn-ghost {
-            background: transparent; color: rgba(255,255,255,0.85);
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-        .btn-ghost:hover { border-color: var(--gold); color: var(--gold-lt); }
-
-        /* ══ NAVBAR (idêntica ao site) ══ */
-        .navbar { position: fixed; top:0; left:0; right:0; z-index:100; padding:18px 0; transition: background .3s, box-shadow .3s; }
-        .navbar.scrolled { background: rgba(8,23,43,0.97); box-shadow: 0 1px 0 rgba(184,150,90,0.15); }
-        .navbar-inner { display:flex; align-items:center; justify-content:space-between; }
-        .navbar-brand { font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:white; text-decoration:none; letter-spacing:.5px; }
-        .navbar-brand span { color: var(--gold); }
-        .navbar-links { display:flex; gap:32px; list-style:none; }
-        .navbar-links a { color: rgba(255,255,255,0.7); text-decoration:none; font-size:13px; letter-spacing:.3px; transition: color .2s; }
-        .navbar-links a:hover, .navbar-links a.active { color: var(--gold-lt); }
-        .navbar-cta { display:flex; align-items:center; gap:12px; }
-        .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
-        .hamburger span { display:block; width:22px; height:1.5px; background:white; transition: all .3s; }
-        .mobile-menu {
-            display:none; position:fixed; inset:0; background: var(--navy); z-index:99;
-            flex-direction:column; align-items:center; justify-content:center; gap:32px;
-        }
-        .mobile-menu.open { display:flex; }
-        .mobile-menu a { font-family:'Cormorant Garamond',serif; font-size:2rem; color:white; text-decoration:none; }
-        .mobile-menu a:hover { color: var(--gold-lt); }
-        .mobile-close { position:absolute; top:20px; right:24px; background:none; border:none; color:white; font-size:1.5rem; cursor:pointer; }
-
-        /* ══ PAGE HEADER ══ */
-        .page-header {
-            background: var(--navy);
-            padding: 168px 0 88px;
-            position: relative;
-            overflow: hidden;
-        }
-        .page-header::before {
-            content:'';
-            position:absolute; inset:0;
-            background: radial-gradient(ellipse 60% 60% at 75% 30%, rgba(184,150,90,0.08) 0%, transparent 70%);
-            pointer-events:none;
-        }
-        .page-header-inner { position:relative; max-width:620px; }
-        .page-header-kicker { display:flex; align-items:center; gap:12px; margin-bottom:24px; }
-        .page-header-kicker-line { width:40px; height:1px; background: var(--gold); }
-        .page-header-kicker span { font-size:11px; letter-spacing:3px; text-transform:uppercase; color: var(--gold); font-weight:500; }
-        .page-header h1 { color:white; margin-bottom:16px; font-weight:300; }
-        .page-header p { color: rgba(255,255,255,0.55); font-size:1.02rem; font-weight:300; max-width:480px; }
-
-        /* ══ GRID DE E-BOOKS ══ */
-        .ebook-grid {
-            display:grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-        }
-        .ebook-card {
-            background: var(--white);
-            border: 1px solid rgba(8,23,43,0.08);
-            border-radius: 4px;
-            overflow: hidden;
-            display:flex;
-            transition: box-shadow .25s, transform .25s;
-        }
-        .ebook-card:hover { box-shadow: 0 14px 40px rgba(8,23,43,0.1); transform: translateY(-3px); }
-        .ebook-cover {
-            width: 132px;
-            flex-shrink: 0;
-            background: var(--navy);
-            padding: 20px 16px;
-            display:flex;
-            flex-direction:column;
-            position:relative;
-        }
-        .ebook-cover .ec-bar { width:22px; height:3px; background:var(--gold); margin-bottom:14px; }
-        .ebook-cover .ec-eyebrow { font-size:6.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold-lt); font-weight:500; margin-bottom:10px; }
-        .ebook-cover .ec-title { font-family:'Cormorant Garamond',serif; font-size:12.5px; line-height:1.35; color:white; font-weight:600; }
-        .ebook-body {
-            padding: 26px 26px 26px 24px;
-            display:flex;
-            flex-direction:column;
-            flex:1;
-        }
-        .ebook-meta {
-            display:flex; gap:14px; margin-bottom:10px;
-        }
-        .ebook-meta span {
-            font-size:10.5px; color: var(--muted); letter-spacing:.3px;
-            display:flex; align-items:center; gap:5px;
-        }
-        .ebook-meta span i { color: var(--gold); font-size:9px; }
-        .ebook-body h3 { color: var(--navy); margin-bottom:10px; font-size:1.3rem; }
-        .ebook-body p.desc { color: var(--muted); font-size:13.5px; margin-bottom:20px; flex:1; }
-        .ebook-body .btn { align-self:flex-start; }
-
-        .ebook-card.placeholder {
-            border-style: dashed;
-            border-color: rgba(8,23,43,0.15);
-            align-items:center;
-            justify-content:center;
-            padding: 40px 26px;
-            color: var(--muted);
-            font-size: 13px;
-            text-align:center;
-        }
-
-        /* ══ FOOTER (idêntico ao site) ══ */
-        footer { background:#040F1D; color:rgba(255,255,255,0.4); padding:56px 0 32px; font-size:13px; }
-        .footer-top { display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:48px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,0.06); margin-bottom:28px; }
-        .footer-brand h3 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:white; font-weight:400; margin-bottom:8px; }
-        .footer-brand h3 span { color: var(--gold); }
-        .footer-brand p { line-height:1.7; }
-        .footer-col h4 { font-size:11px; letter-spacing:2px; text-transform:uppercase; color: rgba(255,255,255,0.6); margin-bottom:16px; }
-        .footer-col a { display:block; color: rgba(255,255,255,0.35); text-decoration:none; margin-bottom:8px; transition: color .2s; }
-        .footer-col a:hover, .footer-col a.active { color: var(--gold-lt); }
-        .footer-social { display:flex; gap:12px; margin-top:16px; }
-        .footer-social a { width:34px; height:34px; border:1px solid rgba(255,255,255,0.1); border-radius:3px; display:flex; align-items:center; justify-content:center; color: rgba(255,255,255,0.4); text-decoration:none; font-size:14px; transition: all .2s; }
-        .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
-        .footer-bottom { display:flex; justify-content:space-between; align-items:flex-start; gap:24px; flex-wrap:wrap; }
-        .footer-compliance { font-size:11px; color: rgba(255,255,255,0.2); line-height:1.6; max-width:780px; text-align:justify; }
-        .footer-copy { font-size:11px; white-space:nowrap; }
-
-        .whatsapp-float {
-            position:fixed; bottom:28px; right:28px; width:54px; height:54px;
-            background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center;
-            color:white; font-size:26px; box-shadow:0 4px 20px rgba(37,211,102,0.35); z-index:200;
-            text-decoration:none; transition: transform .25s, box-shadow .25s;
-        }
-        .whatsapp-float:hover { transform:scale(1.1); box-shadow:0 6px 28px rgba(37,211,102,0.5); }
-
-        @media (max-width: 900px) {
-            .navbar-links, .navbar-cta .btn { display:none; }
-            .hamburger { display:flex; }
-            .ebook-grid { grid-template-columns: 1fr; }
-            .footer-top { grid-template-columns: 1fr 1fr; }
-            .page-header { padding: 140px 0 64px; }
-        }
-        @media (max-width: 600px) {
-            .section { padding: 56px 0; }
-            .footer-top { grid-template-columns: 1fr; gap:32px; }
-            .ebook-card { flex-direction: column; }
-            .ebook-cover { width: 100%; flex-direction: row; align-items:center; gap:10px; padding:14px 18px; }
-            .ebook-cover .ec-bar { margin-bottom:0; }
-            .ebook-cover .ec-title { display:none; }
-        }
-    </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400;1,8..60,500&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- WhatsApp Flutuante -->
-<a href="https://api.whatsapp.com/send/?phone=5516981180180&text=Quero+entender+melhor+os+e-books+e+o+planejamento+financeiro.&type=phone_number&app_absent=0" class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">
+<a href="https://api.whatsapp.com/send/?phone=5516981180180&text=Quero+entender+melhor+o+modelo+fee+based.&type=phone_number&app_absent=0" class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
 
 <!-- ══ NAVBAR ══ -->
-<nav class="navbar" id="navbar">
+<nav class="navbar scrolled" id="navbar">
     <div class="container navbar-inner">
-        <a href="index.html" class="navbar-brand">Fernando <span>Claudio</span></a>
+        <a href="index.html" class="navbar-brand">Fernando Claudio <span class="mark">// FC</span></a>
         <ul class="navbar-links">
             <li><a href="index.html#sobre">Sobre</a></li>
             <li><a href="index.html#servicos">Serviços</a></li>
-            <li><a href="index.html#publico">Para quem</a></li>
-            <li><a href="ebooks.html" class="active">E-books</a></li>
+            <li><a href="index.html#segunda-opiniao">Segunda opinião</a></li>
+            <li><a href="ebooks.html" style="color:var(--petrol-lt);">E-books</a></li>
+            <li><a href="artigos.html">Artigos</a></li>
             <li><a href="index.html#faq">FAQ</a></li>
         </ul>
         <div class="navbar-cta">
-            <a href="https://bit.ly/agendamento_whatsapp_" class="btn btn-ghost" target="_blank">WhatsApp</a>
-            <a href="https://tally.so/r/81LRlz" class="btn btn-gold" target="_blank">Agendar Reunião</a>
+            <a href="https://api.whatsapp.com/send/?phone=5516981180180" class="btn btn-ghost-dark" target="_blank">WhatsApp</a>
+            <a href="https://calendly.com/soufernando/30min" class="btn btn-primary" target="_blank"><span class="long">Agendar</span> Diagnóstico</a>
         </div>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
     </div>
 </nav>
 
-<!-- Menu Mobile -->
 <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-close" id="mobileClose" aria-label="Fechar"><i class="fas fa-times"></i></button>
+    <button class="mobile-close" id="mobileClose" aria-label="Fechar menu"><i class="fas fa-times"></i></button>
     <a href="index.html#sobre" class="mobile-link">Sobre</a>
     <a href="index.html#servicos" class="mobile-link">Serviços</a>
-    <a href="index.html#publico" class="mobile-link">Para quem</a>
+    <a href="index.html#segunda-opiniao" class="mobile-link">Segunda opinião</a>
     <a href="ebooks.html" class="mobile-link">E-books</a>
+    <a href="artigos.html" class="mobile-link">Artigos</a>
     <a href="index.html#faq" class="mobile-link">FAQ</a>
-    <a href="https://tally.so/r/81LRlz" target="_blank" style="color: var(--gold-lt);">Agendar Reunião →</a>
+    <a href="https://calendly.com/soufernando/30min" target="_blank" class="mm-cta">Agendar diagnóstico →</a>
 </div>
 
-<!-- ══ CABEÇALHO DA PÁGINA ══ -->
+<!-- ══ CABEÇALHO ══ -->
 <header class="page-header">
     <div class="container">
         <div class="page-header-inner">
-            <div class="page-header-kicker">
-                <div class="page-header-kicker-line"></div>
-                <span>Biblioteca gratuita</span>
-            </div>
-            <h1>E-books para <em style="font-style:italic;color:var(--gold-lt);">educação financeira</em></h1>
-            <p>Materiais gratuitos, diretos e sem jargão — para quem quer entender o próprio dinheiro antes de dar o próximo passo.</p>
+            <span class="eyebrow">Biblioteca gratuita</span>
+            <h1>E-books para <span class="accent">educação financeira</span></h1>
+            <p>Materiais gratuitos, diretos e sem jargão — para entender o próprio dinheiro antes de dar o próximo passo.</p>
         </div>
     </div>
 </header>
@@ -255,58 +68,57 @@
 <!-- ══ GRID DE E-BOOKS ══ -->
 <section class="section section--white">
     <div class="container">
-        <div class="ebook-grid">
+        <div class="lib-filter fade-up">
+            <span>Dívidas & organização</span>
+            <span>Custos ocultos</span>
+            <span>Planejamento por objetivos</span>
+        </div>
+        <div class="ebook-grid fade-up">
 
-            <a href="landing-antes-de-investir.html" class="ebook-card" style="text-decoration:none;">
+            <a href="landing-antes-de-investir.html" class="ebook-card">
                 <div class="ebook-cover">
-                    <div class="ec-bar"></div>
-                    <div class="ec-eyebrow">Um guia para recomeçar</div>
+                    <div><div class="ec-bar"></div><div class="ec-eyebrow" style="margin-top:12px;">Um guia para recomeçar</div></div>
                     <div class="ec-title">Antes de Investir, Entenda Para Onde Vai o Seu Dinheiro</div>
                 </div>
                 <div class="ebook-body">
-                    <div class="ebook-meta">
-                        <span><i class="fas fa-clock"></i> 20 min de leitura</span>
-                        <span><i class="fas fa-book-open"></i> 9 capítulos</span>
-                    </div>
+                    <div class="ebook-meta"><span><i class="fas fa-clock"></i> 20 min de leitura</span><span><i class="fas fa-book-open"></i> 9 capítulos</span></div>
                     <h3>Antes de Investir, Entenda Para Onde Vai o Seu Dinheiro</h3>
                     <p class="desc">Por que gastamos o que gastamos, como sair das dívidas com estratégia e o que precisa estar pronto antes de qualquer investimento fazer sentido.</p>
-                    <span class="btn btn-gold">Baixar gratuitamente <i class="fas fa-arrow-right" style="font-size:11px;"></i></span>
+                    <span class="btn btn-primary">Baixar gratuitamente <i class="fas fa-arrow-right"></i></span>
                 </div>
             </a>
 
-            <a href="landing-custo-invisivel-carteira.html" class="ebook-card" style="text-decoration:none;">
+            <a href="landing-custo-invisivel-carteira.html" class="ebook-card">
                 <div class="ebook-cover">
-                    <div class="ec-bar"></div>
-                    <div class="ec-eyebrow">Guia para carteiras consolidadas</div>
+                    <div><div class="ec-bar"></div><div class="ec-eyebrow" style="margin-top:12px;">Guia para carteiras consolidadas</div></div>
                     <div class="ec-title">O Custo Invisível da Sua Carteira</div>
                 </div>
                 <div class="ebook-body">
-                    <div class="ebook-meta">
-                        <span><i class="fas fa-clock"></i> 25 min de leitura</span>
-                        <span><i class="fas fa-book-open"></i> 12 capítulos</span>
-                    </div>
+                    <div class="ebook-meta"><span><i class="fas fa-clock"></i> 25 min de leitura</span><span><i class="fas fa-book-open"></i> 12 capítulos</span></div>
                     <h3>O Custo Invisível da Sua Carteira</h3>
                     <p class="desc">Taxas, spreads, comissões e conflitos de interesse que raramente aparecem no extrato — com exemplos práticos para carteiras de R$ 500 mil a R$ 3 milhões.</p>
-                    <span class="btn btn-gold">Baixar gratuitamente <i class="fas fa-arrow-right" style="font-size:11px;"></i></span>
+                    <span class="btn btn-primary">Baixar gratuitamente <i class="fas fa-arrow-right"></i></span>
                 </div>
             </a>
 
-            <a href="landing-plano-investidor-inteligente.html" class="ebook-card" style="text-decoration:none;">
+            <a href="landing-plano-investidor-inteligente.html" class="ebook-card">
                 <div class="ebook-cover">
-                    <div class="ec-bar"></div>
-                    <div class="ec-eyebrow">Antes do produto, o plano</div>
+                    <div><div class="ec-bar"></div><div class="ec-eyebrow" style="margin-top:12px;">Antes do produto, o plano</div></div>
                     <div class="ec-title">O Plano do Investidor Inteligente</div>
                 </div>
                 <div class="ebook-body">
-                    <div class="ebook-meta">
-                        <span><i class="fas fa-clock"></i> 25 min de leitura</span>
-                        <span><i class="fas fa-book-open"></i> 10 perguntas</span>
-                    </div>
+                    <div class="ebook-meta"><span><i class="fas fa-clock"></i> 25 min de leitura</span><span><i class="fas fa-book-open"></i> 10 perguntas</span></div>
                     <h3>O Plano do Investidor Inteligente</h3>
                     <p class="desc">Investir não deveria começar pela escolha de um produto. As dez perguntas que transformam patrimônio em estratégia, com objetivos, prazos e prioridades.</p>
-                    <span class="btn btn-gold">Baixar gratuitamente <i class="fas fa-arrow-right" style="font-size:11px;"></i></span>
+                    <span class="btn btn-primary">Baixar gratuitamente <i class="fas fa-arrow-right"></i></span>
                 </div>
-            </a>            
+            </a>
+
+            <div class="ebook-card placeholder">
+                <i class="fas fa-file-circle-plus"></i>
+                <h3>Material em produção</h3>
+                <p>Em breve: um guia sobre eficiência tributária em previdência privada e sucessão patrimonial.</p>
+            </div>
 
         </div>
     </div>
@@ -317,59 +129,39 @@
     <div class="container">
         <div class="footer-top">
             <div class="footer-brand">
-                <h3>Fernando <span>Claudio</span></h3>
-                <p>Assessor de Investimentos.<br>Alta Renda · Wealth Management · Fee Based.</p>
-                <p style="margin-top:8px;">fernando.claudio@inves.finance</p>
+                <h3>Fernando <span class="mark">// Claudio</span></h3>
+                <p>Assessor de Investimentos.<br>Alta Renda · Fee Based · Planejamento Financeiro.</p>
+                <p style="margin-top:8px;">contato@fernandoclaudio.com.br</p>
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/in/fernandodoc/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="http://instagram.com/ofernandodoc" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://instagram.com/ofernandodoc" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="footer-col">
                 <h4>Navegação</h4>
                 <a href="index.html#sobre">Sobre mim</a>
                 <a href="index.html#servicos">Serviços</a>
-                <a href="index.html#publico">Para quem é</a>
+                <a href="index.html#segunda-opiniao">Segunda opinião</a>
                 <a href="ebooks.html" class="active">E-books</a>
+                <a href="artigos.html">Artigos</a>
                 <a href="index.html#faq">FAQ</a>
             </div>
             <div class="footer-col">
                 <h4>Recursos</h4>
-                <a href="https://tally.so/r/81LRlz" target="_blank">Diagnóstico gratuito</a>
-                <a href="https://fernando-doc.streamlit.app/" target="_blank">Terminal Financeiro</a>
+                <a href="https://calendly.com/soufernando/30min" target="_blank">Diagnóstico gratuito</a>
+                <a href="https://fernando-doc.streamlit.app/" target="_blank">Terminal financeiro</a>
                 <a href="https://api.whatsapp.com/send/?phone=5516981180180" target="_blank">WhatsApp</a>
             </div>
         </div>
         <div class="footer-bottom">
             <p class="footer-compliance">
-                AVISO: Este é o site pessoal do assessor de investimentos Fernando de Oliveira Claudio. O investimento em ativos financeiros envolve riscos e desempenho passado não é garantia de resultados futuros. O conteúdo deste site tem caráter meramente informativo e não constitui recomendação de investimento nem oferta de valores mobiliários. O profissional é devidamente certificado e registrado junto aos órgãos reguladores (ANBIMA e ANCORD). Estratégias de investimento são discutidas de forma individualizada, respeitando o perfil e os objetivos de cada investidor.
+                AVISO: Este é o site pessoal do assessor de investimentos Fernando de Oliveira Claudio. O investimento em ativos financeiros envolve riscos e desempenho passado não é garantia de resultados futuros. O conteúdo deste site tem caráter meramente informativo e não constitui recomendação de investimento nem oferta de valores mobiliários. O profissional é devidamente certificado e habilitado junto à ANBIMA e à ANCORD.
             </p>
-            <p class="footer-copy">© 2025 Fernando Claudio</p>
+            <p class="footer-copy">© 2026 Fernando Claudio</p>
         </div>
     </div>
 </footer>
 
-<script>
-    // Navbar scroll
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 40);
-    });
-    navbar.classList.add('scrolled'); // página sem hero full-screen: navbar sempre sólida
-
-    // Mobile menu
-    document.getElementById('hamburger').addEventListener('click', () => {
-        document.getElementById('mobileMenu').classList.add('open');
-    });
-    document.getElementById('mobileClose').addEventListener('click', () => {
-        document.getElementById('mobileMenu').classList.remove('open');
-    });
-    document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => {
-            document.getElementById('mobileMenu').classList.remove('open');
-        });
-    });
-</script>
-
+<script src="js/main.js"></script>
 </body>
 </html>
