@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mercado Financeiro | Fernando Claudio — Cursos de educação financeira e investimentos</title>
+<meta name="description" content="Cursos, oficinas, workshops, palestras e treinamentos in-company de educação financeira, investimentos, planejamento e sucessão patrimonial para investidores iniciantes, intermediários e avançados.">
+<link rel="canonical" href="https://www.fernandoclaudio.com.br/mercado-financeiro.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mercado Financeiro — Fernando Claudio">
+<meta property="og:description" content="Cursos, oficinas e workshops de educação financeira, investimentos, planejamento e sucessão, do iniciante ao avançado.">
+<meta property="og:url" content="https://www.fernandoclaudio.com.br/mercado-financeiro.html">
+<meta property="og:image" content="https://www.fernandoclaudio.com.br/assets/fernando-perfil.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bege:#F5F2EF;
+    --papel:#FBF9F7;
+    --tinta:#2A2824;
+    --tinta-2:#5E5A53;
+    --linha:#D9D3CC;
+    --jade:#1D6B5A;
+    --jade-claro:#A8D5C2;
+    --serif:'Fraunces', Georgia, serif;
+    --mono:'IBM Plex Mono', ui-monospace, monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bege);color:var(--tinta);font-family:var(--mono);font-size:15px;line-height:1.6}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* Cabeçalho */
+  header.top{border-bottom:1px solid var(--linha);position:sticky;top:0;background:var(--bege);z-index:10}
+  header.top .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+  .logo{font-family:var(--serif);font-weight:600;font-size:20px;text-decoration:none}
+  .logo span{font-family:var(--mono);font-size:13px;color:var(--tinta-2);margin-left:6px}
+  nav a{font-size:12px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;margin-left:4px;padding:8px 12px;border:1px solid transparent;color:var(--tinta)}
+  nav a:hover{border-color:var(--tinta)}
+  nav a[aria-current]{border-color:var(--tinta);background:var(--jade-claro)}
+
+  /* Hero */
+  .hero{padding:88px 0 56px}
+  .tag{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--tinta);padding:4px 10px;margin-bottom:24px}
+  .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5vw,58px);line-height:1.08;max-width:860px;letter-spacing:-.01em}
+  .hero h1 mark{background:var(--jade-claro);color:var(--tinta);padding:0 .12em}
+  .hero p{max-width:640px;margin-top:22px;color:var(--tinta-2);font-size:16px}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+  .hero .meta span{font-size:12px;border:1px dashed var(--tinta-2);padding:4px 10px;color:var(--tinta-2)}
+
+  section{padding:64px 0;border-top:1px solid var(--linha)}
+  .sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:32px}
+  .sec-num{font-size:12px;color:var(--tinta-2);letter-spacing:.08em}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.4vw,38px);line-height:1.15;margin-top:6px}
+  .lead{color:var(--tinta-2);max-width:620px;margin-top:10px}
+
+  /* Trilhas */
+  .trilhas{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .trilha{background:var(--papel);border:1px solid var(--tinta);padding:28px;position:relative}
+  .trilha .nivel{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-2)}
+  .trilha h3{font-family:var(--serif);font-size:26px;font-weight:600;margin:6px 0 10px}
+  .trilha p{font-size:14px;color:var(--tinta-2)}
+  .trilha .ebook{margin-top:18px;padding-top:14px;border-top:1px dashed var(--linha);font-size:13px}
+  .trilha .ebook b{font-weight:600}
+  .trilha.destaque{background:var(--tinta);color:var(--bege)}
+  .trilha.destaque p,.trilha.destaque .nivel{color:#CFC9C1}
+  .trilha.destaque .ebook{border-color:#5E5A53}
+  .selo{position:absolute;top:-12px;right:20px;background:var(--jade-claro);color:var(--tinta);font-size:11px;font-weight:600;padding:3px 9px;letter-spacing:.06em;text-transform:uppercase}
+
+  /* Filtros */
+  .filtros{display:flex;flex-wrap:wrap;gap:8px}
+  .filtros button{font-family:var(--mono);font-size:13px;background:transparent;border:1px solid var(--tinta);color:var(--tinta);padding:8px 14px;cursor:pointer}
+  .filtros button[aria-pressed="true"]{background:var(--tinta);color:var(--bege)}
+  .filtros button:focus-visible{outline:3px solid var(--jade);outline-offset:2px}
+
+  /* Cards de produto */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+  .card{background:var(--papel);border:1px solid var(--linha);display:flex;flex-direction:column}
+  .card[hidden]{display:none}
+  .card-head{padding:22px 22px 0}
+  .card-top{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--tinta-2)}
+  .codigo{font-weight:600;color:var(--jade);border:1px solid var(--jade);padding:1px 8px}
+  .card h3{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.2;margin:14px 0 8px}
+  .card .resumo{font-size:14px;color:var(--tinta-2)}
+  .ficha{margin:18px 22px 0;border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);font-size:13px}
+  .ficha div{display:flex;justify-content:space-between;gap:12px;padding:7px 0}
+  .ficha div + div{border-top:1px dashed var(--linha)}
+  .ficha dt{color:var(--tinta-2)}
+  .ficha dd{text-align:right;font-weight:500}
+  .card ul{list-style:none;padding:16px 22px 0;font-size:13.5px}
+  .card li{padding-left:18px;position:relative;margin-bottom:6px}
+  .card li::before{content:"—";position:absolute;left:0;color:var(--tinta-2)}
+  .entregavel{margin:12px 22px 0;font-size:13px;background:var(--bege);padding:10px 12px;border-left:3px solid var(--jade)}
+  .card-foot{margin-top:auto;padding:20px 22px 22px}
+  .btn{display:inline-block;font-family:var(--mono);font-size:13px;font-weight:600;text-decoration:none;background:var(--tinta);color:var(--bege);padding:10px 16px;border:1px solid var(--tinta)}
+  .btn:hover{background:var(--jade);border-color:var(--jade);color:var(--bege)}
+  .btn.claro{background:transparent;color:var(--tinta)}
+  .btn.claro:hover{background:var(--jade);border-color:var(--jade);color:var(--bege)}
+  .card.ancora{border:2px solid var(--jade)}
+  .card.ancora .card-top .flag{background:var(--jade);color:var(--bege);font-weight:600;padding:1px 8px}
+
+  /* Tabela setorial */
+  .tabela{width:100%;border-collapse:collapse;background:var(--papel);font-size:14px}
+  .tabela th,.tabela td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--linha);vertical-align:top}
+  .tabela th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-2);font-weight:500;border-bottom:1px solid var(--tinta)}
+  .tabela td:first-child{font-family:var(--serif);font-weight:600;font-size:17px;white-space:nowrap}
+
+  /* Recorrência */
+  .mesa{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center;background:var(--tinta);color:var(--bege);padding:40px}
+  .mesa h2{color:var(--bege)}
+  .mesa p{color:#CFC9C1;margin-top:12px}
+  .mesa ul{list-style:none;font-size:14px}
+  .mesa li{padding:10px 0;border-bottom:1px dashed #5E5A53}
+  .mesa .btn{background:var(--jade-claro);color:var(--tinta);border-color:var(--jade-claro);margin-top:22px}
+
+  /* Como funciona */
+  .passos{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:p}
+  .passo{border-top:2px solid var(--tinta);padding-top:14px;font-size:14px}
+  .passo::before{counter-increment:p;content:"0" counter(p);display:block;font-size:12px;color:var(--tinta-2);margin-bottom:6px}
+  .passo b{font-family:var(--serif);font-size:18px;font-weight:600;display:block;margin-bottom:4px}
+
+  /* FAQ */
+  details{border-bottom:1px solid var(--linha);padding:18px 0}
+  summary{font-family:var(--serif);font-size:19px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:var(--mono);font-weight:400}
+  details[open] summary::after{content:"−"}
+  details p{margin-top:10px;color:var(--tinta-2);font-size:14px;max-width:760px}
+
+  /* Rodapé */
+  footer{border-top:1px solid var(--tinta);padding:40px 0 56px;font-size:12.5px;color:var(--tinta-2)}
+  footer .linha{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:20px}
+  footer .aviso{max-width:860px;line-height:1.7}
+
+  @media (max-width:860px){
+    .trilhas,.passos{grid-template-columns:1fr}
+    .mesa{grid-template-columns:1fr;padding:28px}
+    header.top .wrap{height:auto;flex-direction:column;align-items:flex-start;padding-top:12px;padding-bottom:10px;gap:8px}
+    nav{display:flex;flex-wrap:wrap}
+    nav a{margin-left:0;padding:5px 8px;font-size:11px}
+    .tabela td:first-child{white-space:normal}
+    .tabela thead{display:none}
+    .tabela tr{display:block;border-bottom:1px solid var(--tinta);padding:8px 0}
+    .tabela td{display:block;border:0;padding:6px 16px}
+  }
+
+  /* ===== Toque confortável em celular e tablet (alvo mínimo de 44 px) ===== */
+  @media (max-width:1024px), (pointer:coarse){
+    nav a{min-height:44px;display:inline-flex;align-items:center}
+    .filtros button{min-height:44px}
+    summary{min-height:44px;align-items:center}
+    .btn{min-height:48px;display:inline-flex;align-items:center}
+    footer a{display:inline-block;padding:10px 0}
+    .logo{min-height:44px;display:inline-flex;align-items:center}
+  }
+  @media (max-width:720px){
+    header.top{position:static}
+    nav a{padding:0 10px}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="index.html" class="logo">Fernando Claudio <span>// FC</span></a>
+    <nav aria-label="Áreas">
+      <a href="educacao-executiva.html">Educação Executiva</a>
+      <a href="mercado-financeiro.html" aria-current="page">Mercado Financeiro</a>
+      <a href="planejamento-financeiro.html">Planejamento Financeiro</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <span class="tag">Educação Financeira &amp; Mercado Financeiro</span>
+    <h1>Aprenda a <mark>auditar o próprio dinheiro</mark> antes de confiá-lo a alguém.</h1>
+    <p>Cursos, oficinas, workshops, palestras e treinamentos in-company sobre investimentos, planejamento financeiro e sucessão patrimonial. Do primeiro plano à política de investimentos da família.</p>
+    <div class="meta">
+      <span>ANBIMA CPA · C-PRO I · C-PRO R</span>
+      <span>ANCORD</span>
+      <span>MBA Gestão em Vendas · Fundace/USP</span>
+      <span>Ex-professor-tutor de MBA</span>
+    </div>
+  </div>
+</div>
+
+<!-- TRILHAS -->
+<section id="trilhas">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">01 / TRILHAS</div>
+        <h2>Três níveis. Um método.</h2>
+        <p class="lead">Cada trilha começa com um e-book gratuito. Você entra no nível em que está e avança quando fizer sentido.</p>
+      </div>
+    </div>
+    <div class="trilhas">
+      <article class="trilha">
+        <div class="nivel">Nível 1</div>
+        <h3>Iniciante</h3>
+        <p>Para quem tem boa renda, mas ainda não organizou o dinheiro nem entende o básico do mercado.</p>
+        <div class="ebook">Comece por: <b><a href="https://www.fernandoclaudio.com.br/landing-antes-de-investir.html">Antes de Investir</a></b></div>
+      </article>
+      <article class="trilha destaque">
+        <span class="selo">Comece aqui</span>
+        <div class="nivel">Nível 2</div>
+        <h3>Intermediário</h3>
+        <p>Para quem já investe e quer entender o que paga, o que tem e que perguntas fazer a quem cuida do seu dinheiro.</p>
+        <div class="ebook">Comece por: <b><a href="https://www.fernandoclaudio.com.br/landing-custo-invisivel-carteira.html">O Custo Invisível da Sua Carteira</a></b></div>
+      </article>
+      <article class="trilha">
+        <div class="nivel">Nível 3</div>
+        <h3>Avançado</h3>
+        <p>Para famílias e empresários com patrimônio formado: alocação, eficiência tributária, internacional e sucessão.</p>
+        <div class="ebook">Comece por: <b><a href="https://www.fernandoclaudio.com.br/landing-plano-investidor-inteligente.html">O Plano do Investidor Inteligente</a></b></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+<section id="produtos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">02 / PRODUTOS</div>
+        <h2>Cursos, oficinas e workshops</h2>
+        <p class="lead">Filtre pelo seu nível. Turmas com vagas limitadas; entre na lista de espera para receber datas e condições de lançamento.</p>
+      </div>
+      <div class="filtros" role="group" aria-label="Filtrar por nível">
+        <button type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+        <button type="button" data-filtro="iniciante" aria-pressed="false">Iniciante</button>
+        <button type="button" data-filtro="intermediario" aria-pressed="false">Intermediário</button>
+        <button type="button" data-filtro="avancado" aria-pressed="false">Avançado</button>
+        <button type="button" data-filtro="empresas" aria-pressed="false">Empresas</button>
+      </div>
+    </div>
+
+    <div class="grid" id="grid">
+
+      <!-- INICIANTE -->
+      <article class="card" data-nivel="iniciante">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">I-1</span><span>Iniciante · Workshop</span></div>
+          <h3>Para onde vai o seu dinheiro</h3>
+          <p class="resumo">Saia com o seu fluxo de caixa montado e a reserva de emergência definida.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>Ao vivo, on-line</dd></div>
+          <div><dt>Carga</dt><dd>3 h</dd></div>
+        </dl>
+        <ul>
+          <li>Fluxo de caixa pessoal</li>
+          <li>Dívidas caras x baratas e ordem de quitação</li>
+          <li>Reserva de emergência</li>
+          <li>Metas de curto, médio e longo prazo</li>
+        </ul>
+        <div class="card-foot"><a class="btn" href="mailto:ofernandodoc@gmail.com?subject=Lista%20de%20espera%20-%20I-1%20Para%20onde%20vai%20o%20seu%20dinheiro">Entrar na lista de espera</a></div>
+      </article>
+
+      <article class="card" data-nivel="iniciante">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">I-2</span><span>Iniciante · Curso</span></div>
+          <h3>Primeiro Plano Financeiro</h3>
+          <p class="resumo">Do diagnóstico ao plano de 12 meses, com renda fixa, IR e proteção explicados do zero.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>Gravado + 4 encontros ao vivo</dd></div>
+          <div><dt>Carga</dt><dd>10 h</dd></div>
+        </dl>
+        <ul>
+          <li>Patrimônio, fluxo de caixa e objetivos</li>
+          <li>Tesouro Direto, CDB, LCI/LCA, FGC e liquidez</li>
+          <li>Quem é quem no mercado e como cada um é remunerado</li>
+          <li>Perfil de investidor, risco e IR básico</li>
+          <li>Seguro de vida e previdência: quando fazem sentido</li>
+        </ul>
+        <p class="entregavel">Você sai com: o seu plano financeiro de 12 meses.</p>
+        <div class="card-foot"><a class="btn" href="mailto:ofernandodoc@gmail.com?subject=Lista%20de%20espera%20-%20I-2%20Primeiro%20Plano%20Financeiro">Entrar na lista de espera</a></div>
+      </article>
+
+      <article class="card" data-nivel="iniciante">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">I-3</span><span>Iniciante · Oficina</span></div>
+          <h3>Leia o seu extrato</h3>
+          <p class="resumo">Aprenda a encontrar taxas, spreads e impostos no extrato do banco e da corretora.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>Ao vivo, prática</dd></div>
+          <div><dt>Carga</dt><dd>2 h</dd></div>
+        </dl>
+        <ul>
+          <li>Taxa de administração e de performance</li>
+          <li>Spread e come-cotas</li>
+          <li>IR retido na fonte</li>
+          <li>Exercícios com extratos fictícios</li>
+        </ul>
+        <div class="card-foot"><a class="btn" href="mailto:ofernandodoc@gmail.com?subject=Lista%20de%20espera%20-%20I-3%20Leia%20o%20seu%20extrato">Entrar na lista de espera</a></div>
+      </article>
+
+      <article class="card" data-nivel="iniciante">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">I-4</span><span>Iniciante · Ferramenta</span></div>
+          <h3>Kit de planilhas do investidor</h3>
+          <p class="resumo">Orçamento, metas, reserva e acompanhamento de patrimônio em um só lugar.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>Download</dd></div>
+          <div><dt>Uso</dt><dd>Excel e Google Sheets</dd></div>
+        </dl>
+        <ul>
+          <li>Orçamento mensal</li>
+          <li>Planejador de metas</li>
+          <li>Controle de reserva de emergência</li>
+          <li>Evolução do patrimônio</li>
+        </ul>
+        <div class="card-foot"><a class="btn" href="mailto:ofernandodoc@gmail.com?subject=Lista%20de%20espera%20-%20I-4%20Kit%20de%20planilhas">Entrar na lista de espera</a></div>
+      </article>
+
+      <!-- INTERMEDIÁRIO -->
+      <article class="card ancora" data-nivel="intermediario">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">M-1</span><span class="flag">Curso-âncora</span></div>
+          <h3>O Custo Invisível da Sua Carteira</h3>
+          <p class="resumo">Entenda como o dinheiro circula no mercado, quanto você realmente paga e que perguntas fazer.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>6 aulas ao vivo + gravação</dd></div>
+          <div><dt>Carga</dt><dd>12 h</dd></div>
+        </dl>
+        <ul>
+          <li>Distribuidor, gestor, administrador, assessor e consultor</li>
+          <li>Modelos de remuneração: comissão, fee-based e performance</li>
+          <li>Taxas visíveis e invisíveis, inclusive em previdência e COE</li>
+          <li>Fundos: come-cotas, classes e benchmark</li>
+          <li>Cálculo do custo total de uma carteira</li>
+        </ul>
+        <p class="entregavel">Você sai com: o Roteiro de Auditoria da Carteira, com 15 perguntas.</p>
+        <div class="card-foot"><a class="btn" href="mailto:ofernandodoc@gmail.com?subject=Lista%20de%20espera%20-%20M-1%20O%20Custo%20Invisivel%20da%20Sua%20Carteira">Entrar na lista de espera</a></div>
+      </article>
+
+      <article class="card" data-nivel="intermediario">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">M-2</span><span>Intermediário · Oficina</span></div>
+          <h3>Raio-X da Carteira</h3>
+          <p class="resumo">Aplique o roteiro de auditoria no seu próprio extrato, com acompanhamento em turma pequena.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>Turma de 8 a 12 pessoas</dd></div>
+          <div><dt>Carga</dt><dd>4 h</dd></div>
+        </dl>
+        <ul>
+          <li>Identificação de custos e taxas</li>
+          <li>Concentração, liquidez e risco de crédito</li>
+          <li>Perguntas para levar a quem cuida do seu dinheiro</li>
+          <li>Método educacional: sem recomendação de compra ou venda</li>
+        </ul>
+        <div class="card-foot"><a class="btn" href="mailto:ofernandodoc@gmail.com?subject=Lista%20de%20espera%20-%20M-2%20Raio-X%20da%20Carteira">Entrar na lista de espera</a></div>
+      </article>
+
+      <article class="card" data-nivel="intermediario">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">M-3</span><span>Intermediário · Curso</span></div>
+          <h3>Renda Fixa e Crédito Privado sem mistério</h3>
+          <p class="resumo">Do Tesouro às debêntures incentivadas, com marcação a mercado e risco de crédito.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>Gravado + 2 encontros ao vivo</dd></div>
+          <div><dt>Carga</dt><dd>10 h</dd></div>
+        </dl>
+        <ul>
+          <li>Pós, pré e IPCA+</li>
+          <li>Marcação a mercado e duration</li>
+          <li>CDB, LCI, LCA, CRI, CRA e debêntures</li>
+          <li>Rating, garantias e limites do FGC</li>
+        </ul>
+        <div class="card-foot"><a class="btn" href="mailto:ofernandodoc@gmail.com?subject=Lista%20de%20espera%20-%20M-3%20Renda%20Fixa">Entrar na lista de espera</a></div>
+      </article>
+
+      <article class="card" data-nivel="intermediario">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">M-4</span><span>Intermediário · Sazonal</span></div>
+          <h3>IR do Investidor 2027</h3>
+          <p class="resumo">A primeira declaração com as regras da Lei 15.270/2025, explicada para quem investe.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>Ao vivo, fevereiro a abril</dd></div>
+          <div><dt>Carga</dt><dd>6 h</dd></div>
+        </dl>
+        <ul>
+          <li>Tabela regressiva, isenções e compensação de prejuízo</li>
+          <li>DARF de renda variável e fundos imobiliários</li>
+          <li>Ativos no exterior</li>
+          <li>Novas regras para dividendos e alta renda</li>
+        </ul>
+        <p class="entregavel">Com participação de contador convidado.</p>
+        <div class="card-foot"><a class="btn" href="mailto:ofernandodoc@gmail.com?subject=Lista%20de%20espera%20-%20M-4%20IR%20do%20Investidor%202027">Entrar na lista de espera</a></div>
+      </article>
+
+      <article class="card" data-nivel="intermediario">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">M-5</span><span>Intermediário · Workshop</span></div>
+          <h3>Previdência privada: PGBL, VGBL e tributação</h3>
+          <p class="resumo">Quando a previdência ajuda, quando atrapalha e como comparar planos.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>Ao vivo, on-line</dd></div>
+          <div><dt>Carga</dt><dd>3 h</dd></div>
+        </dl>
+        <ul>
+          <li>PGBL x VGBL e dedução de 12%</li>
+          <li>Tabela progressiva x regressiva</li>
+          <li>Taxas, carregamento e portabilidade</li>
+          <li>Previdência na sucessão</li>
+        </ul>
+        <div class="card-foot"><a class="btn" href="mailto:ofernandodoc@gmail.com?subject=Lista%20de%20espera%20-%20M-5%20Previdencia%20privada">Entrar na lista de espera</a></div>
+      </article>
+
+      <!-- AVANÇADO -->
+      <article class="card" data-nivel="avancado">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">A-1</span><span>Avançado · Programa</span></div>
+          <h3>O Plano do Investidor Inteligente</h3>
+          <p class="resumo">Seis semanas para escrever a política de investimentos da sua família.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>Coorte de até 20 alunos</dd></div>
+          <div><dt>Carga</dt><dd>18 h em 6 semanas</dd></div>
+        </dl>
+        <ul>
+          <li>Objetivos, prazos e prioridades da família</li>
+          <li>Alocação por objetivos e por classes de ativos</li>
+          <li>Risco, liquidez, concentração e rebalanceamento</li>
+          <li>Eficiência tributária: PF, PJ e previdência</li>
+          <li>Como contratar e auditar quem cuida do seu dinheiro</li>
+        </ul>
+        <p class="entregavel">Você sai com: a Política de Investimentos da Família, escrita por você.</p>
+        <div class="card-foot"><a class="btn" href="mailto:ofernandodoc@gmail.com?subject=Lista%20de%20espera%20-%20A-1%20O%20Plano%20do%20Investidor%20Inteligente">Entrar na lista de espera</a></div>
+      </article>
+
+      <article class="card" data-nivel="avancado">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">A-2</span><span>Avançado · Curso</span></div>
+          <h3>Sucessão Patrimonial na Prática</h3>
+          <p class="resumo">Quanto custa não planejar e quais instrumentos existem para proteger a família.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>Ao vivo, com advogado convidado</dd></div>
+          <div><dt>Carga</dt><dd>12 h</dd></div>
+        </dl>
+        <ul>
+          <li>Inventário, ITCMD, custos e prazos</li>
+          <li>Testamento, doação com usufruto e holding familiar</li>
+          <li>Previdência e seguro de vida na sucessão</li>
+          <li>Empresa familiar e sucessão rural</li>
+          <li>Liquidez para a família no momento da sucessão</li>
+        </ul>
+        <div class="card-foot"><a class="btn" href="mailto:ofernandodoc@gmail.com?subject=Lista%20de%20espera%20-%20A-2%20Sucessao%20Patrimonial">Entrar na lista de espera</a></div>
+      </article>
+
+      <article class="card" data-nivel="avancado">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">A-3</span><span>Avançado · Curso</span></div>
+          <h3>Investir fora do Brasil</h3>
+          <p class="resumo">Conta no exterior, dólar, ETFs e a tributação de aplicações no exterior.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>Gravado + 3 encontros ao vivo</dd></div>
+          <div><dt>Carga</dt><dd>10 h</dd></div>
+        </dl>
+        <ul>
+          <li>Como abrir e operar conta no exterior</li>
+          <li>ETFs e renda fixa em dólar</li>
+          <li>Risco cambial</li>
+          <li>Tributação (Lei 14.754/2023) e declarações</li>
+        </ul>
+        <div class="card-foot"><a class="btn" href="mailto:ofernandodoc@gmail.com?subject=Lista%20de%20espera%20-%20A-3%20Investir%20fora%20do%20Brasil">Entrar na lista de espera</a></div>
+      </article>
+
+      <article class="card" data-nivel="avancado">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">A-4</span><span>Avançado · Imersão</span></div>
+          <h3>Patrimônio &amp; Família</h3>
+          <p class="resumo">Um dia presencial em Ribeirão Preto para o casal ou os sócios.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>Presencial, até 8 famílias</dd></div>
+          <div><dt>Carga</dt><dd>8 h</dd></div>
+        </dl>
+        <ul>
+          <li>Manhã: plano e alocação</li>
+          <li>Tarde: sucessão e governança familiar</li>
+          <li>Material impresso e acompanhamento pós-imersão</li>
+        </ul>
+        <div class="card-foot"><a class="btn" href="mailto:ofernandodoc@gmail.com?subject=Lista%20de%20espera%20-%20A-4%20Imersao%20Patrimonio%20e%20Familia">Entrar na lista de espera</a></div>
+      </article>
+
+      <article class="card" data-nivel="avancado">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">A-5</span><span>Avançado · Workshop</span></div>
+          <h3>Alta renda depois da Lei 15.270</h3>
+          <p class="resumo">Tributação mínima, dividendos e o que muda na relação entre pessoa física e empresa.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>Ao vivo, com tributarista</dd></div>
+          <div><dt>Carga</dt><dd>3 h</dd></div>
+        </dl>
+        <ul>
+          <li>Tributação mínima anual (IRPFM)</li>
+          <li>Retenção de 10% sobre dividendos acima de R$ 50 mil/mês</li>
+          <li>Impactos para sócios, médicos com PJ e empresários</li>
+        </ul>
+        <div class="card-foot"><a class="btn" href="mailto:ofernandodoc@gmail.com?subject=Lista%20de%20espera%20-%20A-5%20Alta%20renda%20e%20Lei%2015.270">Entrar na lista de espera</a></div>
+      </article>
+
+      <!-- EMPRESAS -->
+      <article class="card" data-nivel="empresas">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">C-1</span><span>Empresas · Palestra</span></div>
+          <h3>Quem está do seu lado? Transparência no mercado financeiro</h3>
+          <p class="resumo">Como funciona a remuneração no mercado e que perguntas todo investidor deveria fazer.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>Presencial ou on-line</dd></div>
+          <div><dt>Duração</dt><dd>60 a 90 min</dd></div>
+        </dl>
+        <ul>
+          <li>Para associações, cooperativas, sindicatos e eventos</li>
+          <li>Comissão x fee-based, no nível do modelo</li>
+          <li>Roteiro de perguntas para os participantes</li>
+        </ul>
+        <div class="card-foot"><a class="btn claro" href="mailto:ofernandodoc@gmail.com?subject=Proposta%20-%20Palestra%20C-1">Solicitar proposta</a></div>
+      </article>
+
+      <article class="card" data-nivel="empresas">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">C-2</span><span>Empresas · Programa</span></div>
+          <h3>Saúde Financeira do Colaborador</h3>
+          <p class="resumo">Programa de educação financeira para o RH, com medição antes e depois.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>4 encontros</dd></div>
+          <div><dt>Duração</dt><dd>90 min cada</dd></div>
+        </dl>
+        <ul>
+          <li>Orçamento e dívidas</li>
+          <li>Reserva e primeiros investimentos</li>
+          <li>Previdência e benefícios da empresa</li>
+          <li>IR e planejamento de longo prazo</li>
+        </ul>
+        <div class="card-foot"><a class="btn claro" href="mailto:ofernandodoc@gmail.com?subject=Proposta%20-%20Saude%20Financeira%20do%20Colaborador">Solicitar proposta</a></div>
+      </article>
+
+      <article class="card" data-nivel="empresas">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">C-3</span><span>Empresas · Workshop</span></div>
+          <h3>Tesouraria que rende</h3>
+          <p class="resumo">Gestão de caixa e aplicações para CFOs, controllers e sócios de PMEs.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>In-company</dd></div>
+          <div><dt>Carga</dt><dd>4 a 8 h</dd></div>
+        </dl>
+        <ul>
+          <li>Política de caixa: liquidez x rentabilidade</li>
+          <li>Aplicações de PJ e sua tributação</li>
+          <li>Risco de contraparte</li>
+          <li>Noções de hedge cambial</li>
+        </ul>
+        <div class="card-foot"><a class="btn claro" href="mailto:ofernandodoc@gmail.com?subject=Proposta%20-%20Tesouraria%20que%20rende">Solicitar proposta</a></div>
+      </article>
+
+      <article class="card" data-nivel="empresas">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">C-4</span><span>Empresas · Workshop</span></div>
+          <h3>Empresa familiar: sucessão e governança</h3>
+          <p class="resumo">Para sócios e herdeiros de empresas familiares e do agro.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>In-company</dd></div>
+          <div><dt>Carga</dt><dd>4 h</dd></div>
+        </dl>
+        <ul>
+          <li>Acordo de sócios e conselho de família</li>
+          <li>Instrumentos de sucessão</li>
+          <li>Liquidez para a sucessão</li>
+        </ul>
+        <div class="card-foot"><a class="btn claro" href="mailto:ofernandodoc@gmail.com?subject=Proposta%20-%20Empresa%20familiar">Solicitar proposta</a></div>
+      </article>
+
+      <article class="card" data-nivel="empresas">
+        <div class="card-head">
+          <div class="card-top"><span class="codigo">C-5</span><span>Educação Executiva</span></div>
+          <h3>Diálogo, evite salas de guerra</h3>
+          <p class="resumo">Treinamento de comunicação e negociação para lideranças e times.</p>
+        </div>
+        <dl class="ficha">
+          <div><dt>Formato</dt><dd>In-company</dd></div>
+          <div><dt>Público</dt><dd>Lideranças e times</dd></div>
+        </dl>
+        <ul>
+          <li>Conversas difíceis sem escalada de conflito</li>
+          <li>Escuta e perguntas que destravam acordos</li>
+        </ul>
+        <div class="card-foot"><a class="btn claro" href="mailto:ofernandodoc@gmail.com?subject=Proposta%20-%20Dialogo%2C%20evite%20salas%20de%20guerra">Solicitar proposta</a></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SETORIAIS -->
+<section id="empresas">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">03 / TURMAS SETORIAIS</div>
+        <h2>O mesmo método, com a realidade da sua profissão</h2>
+        <p class="lead">Turmas fechadas para associações, cooperativas e empresas, com módulo extra por segmento.</p>
+      </div>
+      <a class="btn" href="mailto:ofernandodoc@gmail.com?subject=Turma%20setorial">Montar uma turma</a>
+    </div>
+    <table class="tabela">
+      <thead><tr><th>Segmento</th><th>Módulo extra</th></tr></thead>
+      <tbody>
+        <tr><td>Médicos</td><td>Pessoa física x PJ, carnê-leão, previdência e seguro de renda</td></tr>
+        <tr><td>Agronegócio</td><td>LCA, CRA, CPR, Fiagro e sucessão rural</td></tr>
+        <tr><td>Aviação e pilotos</td><td>Renda em dólar, investimento no exterior e aposentadoria</td></tr>
+        <tr><td>Tecnologia</td><td>PJ, remuneração em dólar e ações de empresas estrangeiras</td></tr>
+        <tr><td>Cartórios e servidores</td><td>Previdência do servidor x complementar, renda alta e estável</td></tr>
+        <tr><td>C-levels e empresários</td><td>Dividendos após a Lei 15.270, holding e tesouraria</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- MESA DO INVESTIDOR -->
+<section id="mesa">
+  <div class="wrap">
+    <div class="mesa">
+      <div>
+        <div class="sec-num" style="color:#CFC9C1">04 / RECORRÊNCIA</div>
+        <h2>Mesa do Investidor</h2>
+        <p>Uma aula ao vivo por mês e uma sessão de perguntas para quem quer continuar aprendendo depois do curso. Educação e método, sem carteira recomendada.</p>
+        <a class="btn" href="mailto:ofernandodoc@gmail.com?subject=Lista%20de%20espera%20-%20Mesa%20do%20Investidor">Quero ser avisado</a>
+      </div>
+      <ul>
+        <li>Aula temática mensal: IR, previdência, sucessão, internacional</li>
+        <li>Sessão de perguntas ao vivo</li>
+        <li>Gravações e materiais de apoio</li>
+        <li>Incluída por 3 meses nos cursos M-1 e A-1</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">05 / COMO FUNCIONA</div>
+        <h2>Do e-book à turma</h2>
+      </div>
+    </div>
+    <div class="passos">
+      <div class="passo"><b>Baixe o e-book</b>Escolha o e-book gratuito do seu nível na <a href="ebooks.html">biblioteca</a>.</div>
+      <div class="passo"><b>Entre na lista</b>Receba datas, ementa completa e condições de lançamento.</div>
+      <div class="passo"><b>Faça a turma</b>Aulas ao vivo, gravações e materiais no padrão documento auditado.</div>
+      <div class="passo"><b>Avance de nível</b>Quando fizer sentido, siga para a próxima trilha.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">06 / DÚVIDAS</div>
+        <h2>Perguntas frequentes</h2>
+      </div>
+    </div>
+    <details>
+      <summary>Os cursos indicam onde investir?</summary>
+      <p>Não. Os cursos são educacionais: ensinam conceitos, critérios e método para você tomar as próprias decisões. Não há recomendação individual de compra ou venda de ativos.</p>
+    </details>
+    <details>
+      <summary>Por qual nível devo começar?</summary>
+      <p>Se você ainda não organizou orçamento e reserva, comece pelo Iniciante. Se já investe e quer entender o que paga, vá para o Intermediário. Se tem patrimônio formado e pensa em sucessão, o Avançado é o seu ponto de partida.</p>
+    </details>
+    <details>
+      <summary>As aulas ficam gravadas?</summary>
+      <p>Sim, nos cursos com encontros ao vivo a gravação fica disponível para os alunos da turma.</p>
+    </details>
+    <details>
+      <summary>Posso desistir depois da compra?</summary>
+      <p>Sim. Nas compras on-line, você tem 7 dias para desistir e receber o valor de volta, conforme o Código de Defesa do Consumidor.</p>
+    </details>
+    <details>
+      <summary>Vocês fazem turmas fechadas para empresas e associações?</summary>
+      <p>Sim. Todos os cursos e as palestras podem ser adaptados para turmas fechadas, presenciais ou on-line, em todo o Brasil.</p>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="linha">
+      <span>Fernando Claudio // FC · Ribeirão Preto, SP · <a href="index.html">Início</a> · <a href="educacao-executiva.html">Educação Executiva</a> · <a href="planejamento-financeiro.html">Planejamento Financeiro</a></span>
+      <span><a href="mailto:ofernandodoc@gmail.com">ofernandodoc@gmail.com</a> · <a href="https://www.linkedin.com/in/fernandodoc/">LinkedIn</a> · <a href="https://instagram.com/ofernandodoc">Instagram</a></span>
+    </div>
+    <p class="aviso">Conteúdo de caráter exclusivamente educacional. Não constitui recomendação de investimento, oferta de valores mobiliários nem consultoria individual. Rentabilidade passada não garante resultados futuros. Os temas tributários e jurídicos refletem as normas vigentes na data de cada turma e não substituem parecer de contador ou advogado.</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var botoes = document.querySelectorAll('.filtros button');
+    var cards = document.querySelectorAll('#grid .card');
+    botoes.forEach(function (botao) {
+      botao.addEventListener('click', function () {
+        var filtro = botao.getAttribute('data-filtro');
+        botoes.forEach(function (b) { b.setAttribute('aria-pressed', b === botao ? 'true' : 'false'); });
+        cards.forEach(function (card) {
+          card.hidden = !(filtro === 'todos' || card.getAttribute('data-nivel') === filtro);
+        });
+      });
+    });
+  })();
+</script>
+</body>
+</html>
