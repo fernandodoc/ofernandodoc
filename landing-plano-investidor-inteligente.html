@@ -2,736 +2,462 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O Plano do Investidor Inteligente — E-book (em breve) | Fernando Cláudio</title>
-<style>
-
-:root{
-  --bg:#F5F2EF;
-  --dark:#2A2824;
-  --dark-2:#3a362f;
-  --destaque:#A8D5C2;
-  --box:#EDE9E1;
-  --muted:#8b8577;
-  --line:#e3ddd2;
-  --cream-line:#46423b;
-}
-
-*{box-sizing:border-box;margin:0;padding:0;}
-
-html{scroll-behavior:smooth;}
-
-body{
-  font-family:"Fraunces",Georgia,serif;
-  background:var(--bg);
-  color:var(--dark);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
-
-img,svg{display:block;max-width:100%;}
-
-a{color:inherit;}
-
-.wrap{
-  max-width:1120px;
-  margin:0 auto;
-  padding:0 28px;
-}
-
-/* -------------------- HERO -------------------- */
-.hero{
-  background:var(--dark);
-  color:var(--bg);
-  position:relative;
-  overflow:hidden;
-  padding-bottom:64px;
-}
-.hero .top-bar{
-  height:6px;
-  background:var(--destaque);
-  width:100%;
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.05fr 0.95fr;
-  gap:56px;
-  align-items:center;
-  padding-top:72px;
-}
-.eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:2.5px;
-  text-transform:uppercase;
-  color:var(--destaque);
-  margin-bottom:22px;
-}
-.eyebrow::before{
-  content:"";
-  width:16px;height:1px;
-  background:var(--destaque);
-}
-.hero h1{
-  font-size:clamp(30px,4vw,46px);
-  font-weight:700;
-  line-height:1.16;
-  letter-spacing:-0.5px;
-  margin-bottom:20px;
-}
-.hero h1 em{
-  font-style:normal;
-  color:var(--destaque);
-}
-.hero p.lead{
-  font-size:16px;
-  font-weight:300;
-  color:#d6d1c6;
-  max-width:480px;
-  margin-bottom:8px;
-}
-.hero-meta{
-  display:flex;
-  gap:28px;
-  margin-top:32px;
-  flex-wrap:wrap;
-}
-.hero-meta .item{
-  font-size:12.5px;
-  color:#b9b3a5;
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-.hero-meta .item .dot{
-  width:5px;height:5px;border-radius:50%;background:var(--destaque);
-  flex-shrink:0;
-}
-
-/* book mockup */
-.book-mock{
-  position:relative;
-  display:flex;
-  justify-content:center;
-}
-.book-cover{
-  width:270px;
-  aspect-ratio:210/297;
-  background:var(--dark);
-  border:1px solid var(--cream-line);
-  border-radius:3px;
-  padding:26px 22px;
-  position:relative;
-  box-shadow:-18px 22px 0 -6px rgba(221,252,99,0.14), 0 40px 70px -20px rgba(0,0,0,0.6);
-  transform:rotate(3deg);
-}
-.book-cover .bc-bar{
-  width:34px;height:5px;background:var(--destaque);margin-bottom:20px;
-}
-.book-cover .bc-eyebrow{
-  font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--destaque);font-weight:600;margin-bottom:14px;
-}
-.book-cover h3{
-  font-size:17.5px;line-height:1.3;font-weight:700;color:var(--bg);margin-bottom:10px;
-}
-.book-cover .bc-sub{
-  font-size:9px;color:#a39d8f;font-weight:300;line-height:1.5;
-}
-.book-cover .bc-foot{
-  position:absolute;bottom:20px;left:22px;right:22px;
-  border-top:1px solid var(--cream-line);
-  padding-top:10px;
-}
-.book-cover .bc-foot .nm{font-size:9px;font-weight:600;color:var(--bg);}
-.book-cover .bc-foot .rl{font-size:7.5px;color:var(--destaque);margin-top:2px;}
-
-/* -------------------- FORM CARD -------------------- */
-.form-card{
-  background:var(--bg);
-  color:var(--dark);
-  border-radius:6px;
-  padding:34px 32px;
-  margin-top:-46px;
-  position:relative;
-  z-index:5;
-  box-shadow:0 30px 60px -20px rgba(0,0,0,0.35);
-}
-.form-card h2{
-  font-size:19px;
-  font-weight:700;
-  margin-bottom:6px;
-}
-.form-card .sub{
-  font-size:12.5px;
-  color:var(--muted);
-  margin-bottom:22px;
-}
-.field{
-  margin-bottom:12px;
-}
-.field label{
-  display:block;
-  font-size:10.5px;
-  font-weight:600;
-  text-transform:uppercase;
-  letter-spacing:0.8px;
-  color:var(--muted);
-  margin-bottom:5px;
-}
-.field input{
-  width:100%;
-  border:1.4px solid var(--line);
-  background:#fff;
-  border-radius:4px;
-  padding:11px 13px;
-  font-family:"Fraunces",Georgia,serif;
-  font-size:13.5px;
-  color:var(--dark);
-  outline:none;
-  transition:border-color .15s ease;
-}
-.field input:focus{
-  border-color:var(--dark);
-}
-.field input:invalid:not(:placeholder-shown){
-  border-color:#c96a4f;
-}
-.submit-btn{
-  width:100%;
-  border:none;
-  background:var(--destaque);
-  color:var(--dark);
-  font-family:"Fraunces",Georgia,serif;
-  font-weight:700;
-  font-size:14px;
-  padding:14px 18px;
-  border-radius:4px;
-  cursor:pointer;
-  margin-top:8px;
-  transition:transform .12s ease, box-shadow .12s ease;
-}
-.submit-btn:hover{
-  transform:translateY(-1px);
-  box-shadow:0 10px 20px -8px rgba(221,252,99,0.5);
-}
-.submit-btn:active{transform:translateY(0);}
-.privacy-note{
-  font-size:10px;
-  color:var(--muted);
-  margin-top:12px;
-  text-align:center;
-  line-height:1.5;
-}
-
-/* success state */
-.success{
-  display:none;
-  text-align:center;
-  padding:12px 4px 4px;
-}
-.success .check{
-  width:46px;height:46px;
-  border-radius:50%;
-  background:var(--dark);
-  color:var(--destaque);
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 16px;
-  font-size:20px;
-  font-weight:700;
-}
-.success h2{font-size:18px;margin-bottom:8px;}
-.success p{font-size:12.5px;color:var(--muted);margin-bottom:20px;line-height:1.6;}
-.download-btn{
-  display:inline-block;
-  background:var(--dark);
-  color:var(--destaque);
-  font-weight:700;
-  font-size:13.5px;
-  padding:13px 26px;
-  border-radius:4px;
-  text-decoration:none;
-}
-
-/* -------------------- CAMINHO (signature section) -------------------- */
-.path-section{
-  padding:96px 0 88px;
-}
-.section-head{
-  max-width:560px;
-  margin-bottom:56px;
-}
-.section-tag{
-  display:inline-block;
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin-bottom:14px;
-}
-.section-head h2{
-  font-size:clamp(22px,3vw,30px);
-  font-weight:700;
-  line-height:1.28;
-}
-
-.path{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:0;
-  position:relative;
-}
-.path::before{
-  content:"";
-  position:absolute;
-  top:19px;
-  left:19px;
-  right:19px;
-  height:1px;
-  background:var(--line);
-  z-index:0;
-}
-.path-step{
-  position:relative;
-  z-index:1;
-  padding-right:24px;
-}
-.path-step .num{
-  width:38px;height:38px;
-  border-radius:50%;
-  background:var(--bg);
-  border:1.6px solid var(--dark);
-  color:var(--dark);
-  display:flex;align-items:center;justify-content:center;
-  font-weight:700;font-size:13px;
-  margin-bottom:20px;
-  transition:background .15s ease,color .15s ease;
-}
-.path-step:hover .num{
-  background:var(--dark);
-  color:var(--destaque);
-}
-.path-step h3{
-  font-size:14.5px;
-  font-weight:600;
-  margin-bottom:8px;
-  line-height:1.35;
-}
-.path-step p{
-  font-size:12.5px;
-  color:var(--muted);
-  line-height:1.6;
-}
-
-/* -------------------- CONTEUDO GRID -------------------- */
-.content-section{
-  background:var(--box);
-  padding:88px 0;
-}
-.chapters{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1px;
-  background:var(--line);
-  border:1px solid var(--line);
-}
-.chapter-card{
-  background:var(--box);
-  padding:26px 24px;
-}
-.chapter-card .ch-num{
-  font-size:11px;
-  color:var(--muted);
-  font-weight:600;
-  letter-spacing:1px;
-  margin-bottom:10px;
-}
-.chapter-card h4{
-  font-size:14px;
-  font-weight:600;
-  line-height:1.4;
-}
-
-/* -------------------- PARA QUEM -------------------- */
-.audience-section{
-  padding:88px 0;
-}
-.audience-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:48px;
-  align-items:start;
-}
-.audience-list{
-  list-style:none;
-}
-.audience-list li{
-  display:flex;
-  gap:14px;
-  padding:16px 0;
-  border-bottom:1px solid var(--line);
-  font-size:14px;
-}
-.audience-list li:first-child{padding-top:0;}
-.audience-list li .mark{
-  color:var(--dark);
-  font-weight:700;
-  flex-shrink:0;
-}
-
-/* -------------------- FINAL CTA -------------------- */
-.final-cta{
-  background:var(--dark);
-  color:var(--bg);
-  padding:96px 0;
-  text-align:center;
-}
-.final-cta h2{
-  font-size:clamp(24px,3.4vw,34px);
-  font-weight:700;
-  max-width:600px;
-  margin:0 auto 16px;
-  line-height:1.3;
-}
-.final-cta p{
-  color:#c9c3b6;
-  font-size:14px;
-  max-width:460px;
-  margin:0 auto 34px;
-  font-weight:300;
-}
-.final-cta .form-card{
-  max-width:420px;
-  margin:0 auto;
-  text-align:left;
-}
-
-/* -------------------- FOOTER -------------------- */
-footer{
-  padding:36px 0;
-  text-align:center;
-}
-footer .name{font-size:13px;font-weight:600;}
-footer .role{font-size:11px;color:var(--muted);margin-top:2px;}
-footer .legal{font-size:10px;color:var(--muted);margin-top:14px;}
-
-/* -------------------- RESPONSIVE -------------------- */
-@media (max-width:860px){
-  .hero-grid{grid-template-columns:1fr;gap:40px;padding-top:52px;}
-  .book-mock{order:-1;}
-  .book-cover{width:200px;}
-  .form-card{margin-top:0;}
-  .path{grid-template-columns:1fr 1fr;row-gap:36px;}
-  .path::before{display:none;}
-  .chapters{grid-template-columns:1fr 1fr;}
-  .audience-grid{grid-template-columns:1fr;}
-  .wrap{padding:0 20px;}
-}
-@media (max-width:520px){
-  .path{grid-template-columns:1fr;}
-  .chapters{grid-template-columns:1fr;}
-}
-
-/* focus visibility */
-a:focus-visible, button:focus-visible, input:focus-visible{
-  outline:2px solid var(--destaque);
-  outline-offset:2px;
-}
-
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto;}
-  *{transition:none !important;}
-}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O Plano do Investidor Inteligente — Série Às Claras | Fernando Cláudio</title>
+<meta name="description" content="E-book O Plano do Investidor Inteligente: dez perguntas que precisam de resposta antes de qualquer aplicação, para transformar patrimônio em estratégia com objetivos, prazos e prioridades. Série Às Claras — Método.">
+<meta property="og:type" content="product">
+<meta property="og:title" content="O Plano do Investidor Inteligente — Série Às Claras">
+<meta property="og:description" content="Dez perguntas que precisam de resposta antes de qualquer aplicação.">
+<meta property="og:image" content="https://www.fernandoclaudio.com.br/capa-o-plano-do-investidor-inteligente.jpg">
+<link rel="canonical" href="https://www.fernandoclaudio.com.br/landing-plano-investidor-inteligente.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* ===== Padrão visual FC (documento auditado · paleta jade) ===== */
-:root{--jade:#1D6B5A;--muted:#6b665e}
-body{font-family:"Fraunces",Georgia,serif}
-.eyebrow,.section-tag,.ch-num,.bc-eyebrow,label,.field label,.privacy-note,.submit-btn,.download-btn,.path-step .num,footer .role,footer .legal,.hero-meta .item,.book-cover .bc-foot .rl{font-family:"IBM Plex Mono",ui-monospace,monospace}
-.field input{font-family:"Fraunces",Georgia,serif;border-radius:0}
-.hero h1,.section-head h2,.form-card h2,.final-cta h2,h2,h3,h4{font-weight:500}
-.hero h1 em{font-style:italic}
-.form-card{border-radius:0;border:1px solid var(--dark);box-shadow:6px 6px 0 var(--dark)}
-.submit-btn,.download-btn{border-radius:0;text-transform:uppercase;letter-spacing:.06em;font-weight:500;font-size:13px;min-height:48px}
-.submit-btn:hover{background:var(--dark);color:var(--destaque)}
-.chapter-card,.book-cover,.path-step{border-radius:0}
-.privacy-note{font-size:11.5px}
-footer .role,footer .legal{font-size:12px}
-a:focus-visible,button:focus-visible,input:focus-visible{outline-color:var(--jade)}
-.fc-topo{background:var(--bg);border-bottom:1px solid var(--dark)}
-.fc-topo .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px}
-.fc-topo a{text-decoration:none;color:var(--dark)}
-.fc-topo .marca{font-weight:600;font-size:17px;min-height:44px;display:inline-flex;align-items:center}
-.fc-topo .marca span{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:400;color:var(--muted);margin-left:6px}
-.fc-topo .voltar{font-family:"IBM Plex Mono",monospace;font-size:12px;text-transform:uppercase;letter-spacing:.06em;min-height:44px;display:inline-flex;align-items:center;padding:0 10px;border:1px solid var(--dark)}
-.fc-topo .voltar:hover{background:var(--dark);color:var(--destaque)}
-footer .fc-links{display:flex;justify-content:center;gap:6px 18px;flex-wrap:wrap;margin-top:16px}
-footer .fc-links a{font-family:"IBM Plex Mono",monospace;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--dark);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
-footer .fc-links a:hover{color:var(--jade)}
+/* ===== Documento Auditado — tokens oficiais ===== */
+:root{
+  --bege:#F5F2EF; --papel:#FBF9F7; --caixa:#EDE9E1;
+  --tinta:#2A2824; --tinta-2:#5C5853; --muted:#6B665E;
+  --linha:#D9D3CC; --linha-escura:#46423B;
+  --jade:#1D6B5A; --jade-claro:#A8D5C2;
+  --serif:"Fraunces",Georgia,serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --borda:1px solid #2A2824;
+  --sombra-carimbo:6px 6px 0 #2A2824;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bege);color:var(--tinta);font-family:var(--serif);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-weight:500;letter-spacing:-.01em;margin:0}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.rotulo{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:1px solid var(--tinta);background:var(--tinta);color:var(--bege);cursor:pointer;text-align:center}
+.btn:hover{background:var(--jade-claro);color:var(--tinta)}
+.btn--claro{background:var(--jade-claro);border-color:var(--jade-claro);color:var(--tinta)}
+.btn--claro:hover{background:transparent;color:var(--jade-claro)}
+.selo{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted);margin-top:14px}
+.escuro .selo{color:#bdb7ab}
+
+
+/* hero */
+.escuro{background:var(--tinta);color:var(--bege)}
+.hero{padding:80px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.hero .rotulo{color:var(--jade-claro)}
+.hero h1{font-size:clamp(42px,6vw,74px);line-height:1.02;margin:20px 0 24px}
+.hero h1 em{font-style:italic;color:var(--jade-claro)}
+.hero .lead{font-size:20px;line-height:1.5;color:#d6d1c6;max-width:34em;margin-bottom:32px}
+.hero .lead strong{color:var(--bege);font-weight:500}
+.capa{position:relative;justify-self:center;width:min(100%,380px)}
+.capa img{border:1px solid var(--linha-escura);box-shadow:10px 10px 0 var(--jade-claro)}
+
+/* motivo da capa: trajetória pontilhada até o objetivo */
+.motivo .trilha{fill:none;stroke:var(--bege);stroke-width:4;stroke-dasharray:14 12}
+.motivo .ponto{fill:var(--jade-claro)}
+.motivo .alvo{fill:var(--tinta);stroke:var(--jade-claro);stroke-width:10}
+.motivo{display:block;width:100%;height:auto}
+.motivo .vis{fill:var(--jade-claro)}
+.motivo .inv{fill:none;stroke:var(--jade-claro);stroke-width:3;stroke-dasharray:9 7}
+.motivo .eixo{stroke:var(--bege);stroke-width:3}
+
+/* seções */
+.secao{padding:88px 0;border-top:var(--borda)}
+.secao--caixa{background:var(--caixa)}
+.cab{max-width:720px;margin-bottom:48px}
+.cab h2{font-size:clamp(30px,4vw,44px);line-height:1.1;margin-top:12px}
+.cab p{color:var(--tinta-2);font-size:19px;margin-top:16px}
+
+/* problema */
+.problema{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.problema p+p{margin-top:16px}
+.problema .texto p{font-size:19px;color:var(--tinta-2)}
+.problema .texto strong{color:var(--tinta);font-weight:500}
+.conta{background:var(--papel);border:var(--borda);box-shadow:var(--sombra-carimbo)}
+.conta h3{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:14px 20px;border-bottom:var(--borda)}
+.conta dl{margin:0;display:grid;grid-template-columns:1fr auto}
+.conta dt,.conta dd{margin:0;padding:12px 20px;border-bottom:1px solid var(--linha);font-size:16px}
+.conta dd{text-align:right;font-family:var(--mono);font-size:15px;white-space:nowrap}
+.conta .total dt,.conta .total dd{border-bottom:0;font-weight:500;background:var(--jade-claro)}
+.conta .nota{padding:12px 20px;font-family:var(--mono);font-size:11px;letter-spacing:.02em;color:var(--muted);border-top:var(--borda);line-height:1.5}
+
+/* aprender */
+.grade{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:var(--borda);background:var(--papel)}
+.item{padding:28px 26px;border-right:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+.item:nth-child(3n){border-right:0}
+.item:nth-last-child(-n+3){border-bottom:0}
+.item .rotulo{color:var(--jade)}
+.item h3{font-size:23px;line-height:1.2;margin:10px 0 10px}
+.item p{font-size:15px;color:var(--tinta-2)}
+
+/* capítulos */
+.capitulos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);column-gap:32px}
+.capitulos li{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--linha);font-size:18px}
+.capitulos li span{font-family:var(--mono);font-size:12px;color:var(--muted);min-width:22px}
+
+/* recebe */
+.recebe{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:center}
+.lista{list-style:none;margin:0;padding:0;border-top:var(--borda)}
+.lista li{padding:14px 0 14px 34px;border-bottom:1px solid var(--linha);position:relative;font-size:17px}
+.lista li::before{content:"\2713";position:absolute;left:4px;top:13px;font-family:var(--mono);color:var(--jade);font-weight:500}
+.recebe .acao{margin-top:32px}
+.escuro .lista li::before{color:var(--jade-claro)}
+
+/* para quem */
+.duas{display:grid;grid-template-columns:1fr 1fr;border:var(--borda)}
+.duas>div{padding:32px}
+.duas>div+div{border-left:var(--borda);background:var(--papel)}
+.duas h3{font-size:26px;margin:10px 0 18px}
+.duas ul{list-style:none;margin:0;padding:0}
+.duas li{padding:12px 0 12px 30px;border-top:1px solid var(--linha);position:relative}
+.duas .sim li::before{content:"\2192";position:absolute;left:2px;color:var(--jade);font-weight:500}
+.duas .nao li::before{content:"\00D7";position:absolute;left:4px;color:var(--muted);font-size:20px;line-height:1.2}
+
+/* autor */
+.autor{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:start}
+.autor img{border:var(--borda);box-shadow:var(--sombra-carimbo);filter:grayscale(.15)}
+.autor h2{font-size:clamp(30px,4vw,40px);margin:12px 0 6px}
+.autor .cargo{font-style:italic;color:var(--tinta-2);font-size:19px;margin-bottom:22px}
+.autor p+p{margin-top:14px}
+.credenciais{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+.credenciais span{font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;border:var(--borda);padding:6px 10px;background:var(--papel)}
+
+/* garantia */
+.garantia{padding:96px 0;text-align:center}
+.garantia .carimbo{padding:0;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:132px;height:132px;border:2px solid var(--jade-claro);border-radius:50%;font-family:var(--mono);color:var(--jade-claro);text-transform:uppercase;letter-spacing:.08em;font-size:11px;margin-bottom:28px;transform:rotate(-8deg)}
+.garantia .carimbo b{font-family:var(--serif);font-size:44px;font-weight:500;letter-spacing:0;line-height:1}
+.garantia h2{font-size:clamp(30px,4vw,44px);max-width:16em;margin:0 auto 18px}
+.garantia p.txt{max-width:36em;margin:0 auto 36px;color:#d6d1c6;font-size:18px}
+
+
+@media (max-width:960px){
+  .hero .wrap,.problema,.recebe,.autor{grid-template-columns:1fr;gap:40px}
+  .capa{order:-1;width:min(70%,300px)}
+  .grade{grid-template-columns:1fr 1fr}
+  .item:nth-child(3n){border-right:1px solid var(--linha)}
+  .item:nth-child(2n){border-right:0}
+  .item:nth-last-child(-n+3){border-bottom:1px solid var(--linha)}
+  .item:nth-last-child(-n+2){border-bottom:0}
+  .capitulos{grid-template-columns:1fr 1fr}
+  .autor img{max-width:280px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .hero{padding:48px 0 56px}
+  .hero .lead{font-size:18px}
+  .secao{padding:64px 0}
+  .grade,.capitulos,.duas{grid-template-columns:1fr}
+  .item{border-right:0 !important;border-bottom:1px solid var(--linha) !important}
+  .item:last-child{border-bottom:0 !important}
+  .duas>div{padding:24px}
+  .duas>div+div{border-left:0;border-top:var(--borda)}
+  .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ===== Topo, subnavegação, rodapé e WhatsApp (padrão do site) ===== */
+.topo{border-bottom:1px solid var(--tinta);background:var(--bege);position:sticky;top:0;z-index:20}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.marca{font-weight:600;text-decoration:none;font-size:18px;white-space:nowrap}
+.marca span{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--tinta-2);margin-left:6px}
+.topo nav{display:flex;gap:4px}
+.topo nav a{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;padding:8px 12px;border:1px solid transparent}
+.topo nav a:hover{border-color:var(--tinta)}
+.subnav{border-bottom:1px solid var(--linha);background:var(--papel)}
+.subnav .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.subnav .wrap::-webkit-scrollbar{display:none}
+.subnav a{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;padding:12px 12px;white-space:nowrap;color:var(--tinta-2);border-bottom:2px solid transparent}
+.subnav a:hover{color:var(--tinta);border-bottom-color:var(--jade)}
+.subnav a[aria-current]{color:var(--tinta);border-bottom-color:var(--jade)}
+footer{border-top:1px solid var(--tinta);padding:36px 0 48px;font-size:14px;color:var(--tinta-2)}
+footer .linha{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:18px}
+footer nav{display:flex;gap:18px;flex-wrap:wrap}
+footer nav a{text-decoration:none;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+footer nav a:hover{color:var(--jade)}
+footer .aviso{font-size:13px;line-height:1.7;max-width:900px;margin:0}
+.wa{position:fixed;right:20px;bottom:20px;z-index:30;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;background:var(--jade);color:var(--bege);text-decoration:none;padding:12px 16px;border:1px solid var(--jade)}
+.wa:hover{background:var(--tinta);border-color:var(--tinta)}
+@media (max-width:1024px){.subnav .wrap{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent);padding-right:48px}}
+@media (max-width:1024px), (pointer:coarse){
+  .topo nav a,.marca{min-height:44px;display:inline-flex;align-items:center}
+  .subnav a{min-height:44px;display:inline-flex;align-items:center}
+  footer nav a{min-height:44px;display:inline-flex;align-items:center}
+}
+@media (max-width:720px){
+  .topo{position:static}
+  .topo .wrap{height:auto;flex-direction:column;align-items:flex-start;padding-top:12px;padding-bottom:10px;gap:8px}
+  .topo nav{flex-wrap:wrap}
+  .topo nav a{padding:0 10px;font-size:11px;border-color:var(--linha)}
+  .wa{right:12px;bottom:12px;padding:10px 12px}
+}
 </style>
 </head>
 <body>
 
-<header class="fc-topo">
+<header class="topo">
   <div class="wrap">
-    <a class="marca" href="index.html">Fernando Cláudio <span>// FC</span></a>
-    <a class="voltar" href="ebooks.html">Todos os e-books</a>
+    <a class="marca" href="index.html">Fernando Claudio <span>// FC</span></a>
+    <nav aria-label="Áreas">
+      <a href="educacao-executiva.html">Educação Executiva</a>
+      <a href="mercado-financeiro.html">Mercado Financeiro</a>
+      <a href="planejamento-financeiro.html">Planejamento Financeiro</a>
+    </nav>
   </div>
 </header>
+<nav class="subnav" aria-label="Conteúdo">
+  <div class="wrap">
+    <a href="index.html">Início</a>
+    <a href="ebooks.html" aria-current="page">E-books</a>
+    <a href="artigos.html">Artigos</a>
+    <a href="planejamento-financeiro.html#segunda-opiniao">Segunda opinião</a>
+    <a href="planejamento-financeiro.html#faq">FAQ</a>
+  </div>
+</nav>
+
 <!-- ============ HERO ============ -->
-<section class="hero">
-  <div class="top-bar"></div>
+<section class="hero escuro">
   <div class="wrap">
-    <div class="hero-grid">
+    <div>
+      <span class="rotulo">Série Às Claras · Método</span>
+      <h1>O plano do investidor <em>inteligente.</em></h1>
+      <p class="lead">Investir não deveria começar pela escolha de um produto. <strong>Dez perguntas que precisam de resposta antes de qualquer aplicação</strong> — para transformar patrimônio em estratégia, com objetivos, prazos e prioridades.</p>
+      <a class="btn btn--claro js-compra" href="#" rel="noopener">Quero montar o meu plano &#8594;</a>
+      <p class="selo">Acesso imediato · Garantia incondicional de 7 dias</p>
+    </div>
+    <div class="capa">
+      <img src="capa-o-plano-do-investidor-inteligente.jpg" width="640" height="1024" alt="Capa do e-book O Plano do Investidor Inteligente, Série Às Claras, de Fernando de Oliveira Cláudio">
+    </div>
+  </div>
+</section>
+
+<!-- ============ O PROBLEMA ============ -->
+<section class="secao">
+  <div class="wrap">
+    <div class="cab">
+      <span class="rotulo">Por que isso importa</span>
+      <h2>Sem plano, cada aplicação é uma decisão isolada.</h2>
+    </div>
+    <div class="problema">
+      <div class="texto">
+        <p>A maioria das carteiras nasce de forma fragmentada: <strong>um produto aqui, uma oportunidade ali</strong>, cada escolha feita no seu momento e por um motivo diferente. O resultado é um conjunto de aplicações, e não uma estratégia.</p>
+        <p>Um plano por escrito inverte a ordem. Primeiro vêm os objetivos, os prazos e o risco que faz sentido para você. <strong>Só depois vêm os produtos</strong> — e cada decisão passa a ter um critério para ser avaliada.</p>
+        <p>Este livro organiza as perguntas na ordem certa e termina no documento que amarra tudo.</p>
+      </div>
+      <div class="conta" aria-label="O que o plano responde">
+        <h3>O plano em uma página</h3>
+        <dl>
+          <dt>Onde estou e onde quero chegar</dt><dd>P. 01–02</dd>
+          <dt>Quanto preciso acumular</dt><dd>P. 03</dd>
+          <dt>Risco e distribuição do patrimônio</dt><dd>P. 04–05</dd>
+          <dt>Escolha dos investimentos</dt><dd>P. 06</dd>
+          <dt>Acompanhamento e rebalanceamento</dt><dd>P. 07–08</dd>
+          <dt>Proteção e sucessão</dt><dd>P. 09–10</dd>
+          <div class="total" style="display:contents"><dt>Resultado</dt><dd>Plano escrito</dd></div>
+        </dl>
+        <p class="nota">Cada pergunta do livro corresponde a uma parte do plano. Ao final, você tem um documento para orientar as próximas decisões.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ O QUE VOCÊ VAI APRENDER ============ -->
+<section class="secao secao--caixa">
+  <div class="wrap">
+    <div class="cab">
+      <span class="rotulo">O que você vai aprender</span>
+      <h2>Seis etapas para sair da situação atual e chegar a um plano por escrito.</h2>
+    </div>
+    <div class="grade">
+      <div class="item"><span class="rotulo">01</span><h3>Diagnóstico</h3><p>Patrimônio, renda, dívidas e compromissos colocados no papel, sem arredondar.</p></div>
+      <div class="item"><span class="rotulo">02</span><h3>Objetivos com valor e prazo</h3><p>Transformar desejos em metas nomeadas, com quanto custam e quando precisam estar prontas.</p></div>
+      <div class="item"><span class="rotulo">03</span><h3>O risco que faz sentido</h3><p>Como separar o risco que você aguenta do risco de que o seu objetivo precisa.</p></div>
+      <div class="item"><span class="rotulo">04</span><h3>Alocação antes do produto</h3><p>Distribuir o patrimônio entre classes de ativos e só então escolher os investimentos.</p></div>
+      <div class="item"><span class="rotulo">05</span><h3>Acompanhar e rebalancear</h3><p>Como manter o plano vivo, sem ansiedade e sem desvio silencioso.</p></div>
+      <div class="item"><span class="rotulo">06</span><h3>Proteger e transmitir</h3><p>O patrimônio protegido de imprevistos e preparado para a sucessão.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAPÍTULOS ============ -->
+<section class="secao">
+  <div class="wrap">
+    <div class="cab">
+      <span class="rotulo">Sumário</span>
+      <h2>Dez perguntas, na ordem certa.</h2>
+    </div>
+    <ol class="capitulos">
+      <li><span>01</span>Onde estou?</li>
+      <li><span>02</span>Onde quero chegar?</li>
+      <li><span>03</span>Quanto preciso acumular?</li>
+      <li><span>04</span>Qual risco faz sentido para mim?</li>
+      <li><span>05</span>Como distribuir o patrimônio?</li>
+      <li><span>06</span>Como escolher os investimentos?</li>
+      <li><span>07</span>Como acompanhar?</li>
+      <li><span>08</span>Quando rebalancear?</li>
+      <li><span>09</span>Como proteger o patrimônio?</li>
+      <li><span>10</span>Como estruturar a sucessão?</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ O QUE VOCÊ RECEBE ============ -->
+<section class="secao escuro" style="border-top:0">
+  <div class="wrap">
+    <svg class="motivo" viewBox="0 0 1180 220" aria-hidden="true" style="margin-bottom:56px">
+      <g transform="translate(0,28)">
+      <polyline class="trilha" points="70,168 190,136 250,146 370,110 450,118 580,82 660,88 790,54 860,44 1000,18 1100,22"/>
+      <ellipse class="ponto" cx="70" cy="168" rx="34" ry="20"/>
+      <ellipse class="ponto" cx="190" cy="136" rx="34" ry="20"/>
+      <ellipse class="ponto" cx="250" cy="146" rx="34" ry="20"/>
+      <ellipse class="ponto" cx="370" cy="110" rx="34" ry="20"/>
+      <ellipse class="ponto" cx="450" cy="118" rx="34" ry="20"/>
+      <ellipse class="ponto" cx="580" cy="82" rx="34" ry="20"/>
+      <ellipse class="ponto" cx="660" cy="88" rx="34" ry="20"/>
+      <ellipse class="ponto" cx="790" cy="54" rx="34" ry="20"/>
+      <ellipse class="ponto" cx="860" cy="44" rx="34" ry="20"/>
+      <ellipse class="ponto" cx="1000" cy="18" rx="34" ry="20"/>
+      <ellipse class="alvo" cx="1100" cy="22" rx="44" ry="24"/>
+    </g>
+    </svg>
+    <div class="recebe">
+      <div class="cab" style="margin:0">
+        <span class="rotulo" style="color:var(--jade-claro)">O que você recebe</span>
+        <h2>Um roteiro para chegar ao seu plano por escrito.</h2>
+        <p style="color:#d6d1c6">O acesso chega no seu e-mail logo após a confirmação do pagamento.</p>
+      </div>
       <div>
-        <div class="eyebrow">E-book · em breve</div>
-        <h1>Antes do produto,<br>o plano.<br><em>Dez perguntas essenciais.</em></h1>
-        <p class="lead">Investir não deveria começar pela escolha de um produto. Deveria começar pela definição do que o seu dinheiro precisa fazer por você. Este guia mostra o roteiro completo.</p>
-        <div class="hero-meta">
-          <div class="item"><span class="dot"></span>Leitura de 25 minutos</div>
-          <div class="item"><span class="dot"></span>10 perguntas + plano escrito</div>
-          <div class="item"><span class="dot"></span>Para quem já tem patrimônio a organizar</div>
+        <ul class="lista" style="border-color:var(--linha-escura)">
+          <li style="border-color:var(--linha-escura)">E-book completo em PDF e ePub</li>
+          <li style="border-color:var(--linha-escura)">10 capítulos, uma pergunta por capítulo</li>
+          <li style="border-color:var(--linha-escura)">Modelo de plano de investimentos por escrito</li>
+          <li style="border-color:var(--linha-escura)">Quadros de destaque com os pontos de atenção</li>
+          <li style="border-color:var(--linha-escura)">Exercícios e checklist para aplicar ao seu patrimônio</li>
+          <li style="border-color:var(--linha-escura)">Glossário e referências normativas</li>
+        </ul>
+        <div class="acao">
+          <a class="btn btn--claro js-compra" href="#" rel="noopener">Comprar e-book agora &#8594;</a>
+          <p class="selo">Pagamento e entrega pela Hotmart</p>
         </div>
       </div>
-      <div class="book-mock">
-        <div class="book-cover">
-          <div class="bc-bar"></div>
-          <div class="bc-eyebrow">Antes do produto, o plano</div>
-          <h3>O Plano do Investidor Inteligente</h3>
-          <p class="bc-sub">Dez perguntas que precisam de resposta antes de qualquer aplicação — para transformar patrimônio em estratégia.</p>
-          <div class="bc-foot">
-            <div class="nm">Fernando Cláudio</div>
-            <div class="rl">Educação Financeira, Assessoria e Planejamento Estratégico</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="wrap">
-  <div class="form-card" id="captureCard">
-    <div id="formState">
-      <h2>Seja avisado no lançamento</h2>
-      <p class="sub">O e-book está em produção. Deixe seus dados e avisamos quando estiver disponível para compra.</p>
-      <form id="leadForm" novalidate>
-        <div class="field">
-          <label for="name">Nome completo</label>
-          <input type="text" id="name" name="name" placeholder="Como podemos te chamar" required>
-        </div>
-        <div class="field">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" placeholder="voce@email.com" required>
-        </div>
-        <div class="field">
-          <label for="whatsapp">WhatsApp</label>
-          <input type="tel" id="whatsapp" name="whatsapp" placeholder="(16) 90000-0000" required>
-        </div>
-        <button type="submit" class="submit-btn">Quero ser avisado</button>
-        <p class="privacy-note">Seus dados são usados apenas para o aviso de lançamento e contato sobre educação financeira. Sem spam.</p>
-      </form>
-    </div>
-    <div class="success" id="successState">
-      <div class="check">&#10003;</div>
-      <h2>Pronto, você está na lista.</h2>
-      <p>Avisaremos por e-mail e WhatsApp quando o e-book estiver disponível.</p>
-    </div>
-  </div>
-</div>
-
-<!-- ============ CAMINHO ============ -->
-<section class="path-section">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-tag">O caminho do e-book</div>
-      <h2>Da situação atual ao documento que orienta cada decisão futura.</h2>
-    </div>
-    <div class="path">
-      <div class="path-step">
-        <div class="num">01</div>
-        <h3>Onde estou, onde quero chegar</h3>
-        <p>Patrimônio, renda, dívidas e objetivos nomeados com valor e prazo.</p>
-      </div>
-      <div class="path-step">
-        <div class="num">02</div>
-        <h3>Risco e alocação</h3>
-        <p>Quanto risco faz sentido e como distribuir o patrimônio entre classes de ativos.</p>
-      </div>
-      <div class="path-step">
-        <div class="num">03</div>
-        <h3>Acompanhar e rebalancear</h3>
-        <p>Como manter o plano vivo, sem ansiedade e sem desvio silencioso.</p>
-      </div>
-      <div class="path-step">
-        <div class="num">04</div>
-        <h3>Proteger e transmitir</h3>
-        <p>O patrimônio protegido de imprevistos e preparado para a sucessão.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTEÚDO ============ -->
-<section class="content-section">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-tag">O que você vai encontrar</div>
-      <h2>Dez perguntas, na ordem certa, mais o documento que amarra tudo.</h2>
-    </div>
-    <div class="chapters">
-      <div class="chapter-card"><div class="ch-num">01</div><h4>Onde estou?</h4></div>
-      <div class="chapter-card"><div class="ch-num">02</div><h4>Onde quero chegar?</h4></div>
-      <div class="chapter-card"><div class="ch-num">03</div><h4>Quanto preciso acumular?</h4></div>
-      <div class="chapter-card"><div class="ch-num">04</div><h4>Qual risco faz sentido para mim?</h4></div>
-      <div class="chapter-card"><div class="ch-num">05</div><h4>Como distribuir o patrimônio?</h4></div>
-      <div class="chapter-card"><div class="ch-num">06</div><h4>Como escolher os investimentos?</h4></div>
-      <div class="chapter-card"><div class="ch-num">07</div><h4>Como acompanhar?</h4></div>
-      <div class="chapter-card"><div class="ch-num">08</div><h4>Quando rebalancear?</h4></div>
-      <div class="chapter-card"><div class="ch-num">09</div><h4>Como proteger o patrimônio?</h4></div>
-      <div class="chapter-card"><div class="ch-num">10</div><h4>Como estruturar a sucessão?</h4></div>
     </div>
   </div>
 </section>
 
 <!-- ============ PARA QUEM ============ -->
-<section class="audience-section">
+<section class="secao">
   <div class="wrap">
-    <div class="audience-grid">
-      <div class="section-head" style="margin-bottom:0;">
-        <div class="section-tag">Para quem é este material</div>
-        <h2>Para quem já tem patrimônio, mas nunca teve um plano formal por escrito.</h2>
+    <div class="cab">
+      <span class="rotulo">Este livro é para você?</span>
+      <h2>Para quem já tem patrimônio, mas nunca teve um plano formal por escrito.</h2>
+    </div>
+    <div class="duas">
+      <div class="sim">
+        <span class="rotulo" style="color:var(--jade)">Para quem é</span>
+        <h3>É para você se…</h3>
+        <ul>
+          <li>Tem R$ 300 mil ou mais investidos, mas nunca formalizou objetivos e prazos</li>
+          <li>Toma decisões de investimento isoladas, sem uma estratégia que as conecte</li>
+          <li>Não sabe dizer, com clareza, se o risco atual da carteira é o risco certo para você</li>
+          <li>Quer transformar escolhas soltas em um plano que oriente as próximas decisões</li>
+        </ul>
       </div>
-      <ul class="audience-list">
-        <li><span class="mark">&#8594;</span>Quem tem R$ 300 mil ou mais investidos, mas nunca formalizou objetivos e prazos</li>
-        <li><span class="mark">&#8594;</span>Quem toma decisões de investimento isoladas, sem uma estratégia que as conecte</li>
-        <li><span class="mark">&#8594;</span>Quem não sabe dizer, com clareza, se o risco atual da carteira é o risco certo para si</li>
-        <li><span class="mark">&#8594;</span>Quem quer uma segunda opinião técnica e imparcial sobre o plano que tem hoje — ou sobre a ausência dele</li>
-      </ul>
+      <div class="nao">
+        <span class="rotulo" style="color:var(--muted)">Não é para quem</span>
+        <h3>Não é para você se…</h3>
+        <ul>
+          <li>Procura dica de produto ou carteira pronta</li>
+          <li>Espera promessa de rentabilidade ou ganho rápido</li>
+          <li>Quer delegar a decisão sem entender o porquê de cada escolha</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CTA FINAL ============ -->
-<section class="final-cta">
-  <div class="wrap">
-    <h2>Seu plano existe no papel — ou só na cabeça?</h2>
-    <p>Entre na lista e seja avisado assim que o e-book for lançado.</p>
-    <div class="form-card">
-      <div id="formStateFinal">
-        <h2>Entre na lista de espera</h2>
-        <p class="sub">Um único aviso no lançamento. Sem spam.</p>
-        <form id="leadFormFinal" novalidate>
-          <div class="field">
-            <label for="name2">Nome completo</label>
-            <input type="text" id="name2" name="name" placeholder="Como podemos te chamar" required>
-          </div>
-          <div class="field">
-            <label for="email2">E-mail</label>
-            <input type="email" id="email2" name="email" placeholder="voce@email.com" required>
-          </div>
-          <div class="field">
-            <label for="whatsapp2">WhatsApp</label>
-            <input type="tel" id="whatsapp2" name="whatsapp" placeholder="(16) 90000-0000" required>
-          </div>
-          <button type="submit" class="submit-btn">Quero ser avisado</button>
-          <p class="privacy-note">Seus dados são usados apenas para o aviso de lançamento e contato sobre educação financeira. Sem spam.</p>
-        </form>
-      </div>
-      <div class="success" id="successStateFinal">
-        <div class="check">&#10003;</div>
-        <h2>Pronto, você está na lista.</h2>
-        <p>Avisaremos por e-mail e WhatsApp quando o e-book estiver disponível.</p>
+<!-- ============ AUTOR ============ -->
+<section class="secao secao--caixa">
+  <div class="wrap autor">
+    <img src="fernando-claudio.jpg" width="500" height="500" alt="Fernando de Oliveira Cláudio">
+    <div>
+      <span class="rotulo">Quem escreve</span>
+      <h2>Fernando de Oliveira Cláudio</h2>
+      <p class="cargo">Educador financeiro e consultor corporativo</p>
+      <p>Atua na área comercial desde 2000 e no mercado financeiro desde 2023. Formado em Relações Internacionais, com MBA em Gestão em Vendas pela Fundace/USP, onde também foi professor-tutor do MBA Gestão Estratégica em Vendas.</p>
+      <p>Trabalha com transparência radical sobre como funciona a remuneração no mercado financeiro. A missão é contribuir para um mercado mais transparente — e a Série Às Claras existe para isso.</p>
+      <div class="credenciais">
+        <span>ANBIMA CPA</span><span>ANBIMA C-PRO R</span><span>ANBIMA C-PRO I</span><span>ANCORD</span><span>MBA Fundace/USP</span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ GARANTIA ============ -->
+<section class="garantia escuro">
+  <div class="wrap">
+    <div class="carimbo" aria-hidden="true"><b>7</b>dias</div>
+    <h2>Garantia incondicional de 7 dias.</h2>
+    <p class="txt">Leia, responda às perguntas e monte o seu plano. Se achar que o livro não trouxe clareza, peça o reembolso integral pela Hotmart em até 7 dias, sem burocracia e sem precisar explicar o motivo.</p>
+    <a class="btn btn--claro js-compra" href="#" rel="noopener">Garantir meu exemplar &#8594;</a>
+    <p class="selo">Acesso imediato · Pagamento seguro pela Hotmart</p>
   </div>
 </section>
 
 <footer>
-  <div class="name">Fernando Cláudio</div>
-  <div class="role">Educador Financeiro e Consultor Corporativo</div>
-  <div class="legal">Seus dados estão protegidos e não serão compartilhados com terceiros.</div>
-  <nav class="fc-links" aria-label="Site">
-    <a href="index.html">Início</a>
-    <a href="educacao-executiva.html">Educação Executiva</a>
-    <a href="mercado-financeiro.html">Mercado Financeiro</a>
-    <a href="planejamento-financeiro.html">Planejamento Financeiro</a>
-  </nav>
+  <div class="wrap">
+    <div class="linha">
+      <span>Fernando Claudio · Ribeirão Preto/SP · ofernandodoc@gmail.com</span>
+      <nav aria-label="Rodapé">
+        <a href="index.html">Início</a>
+        <a href="educacao-executiva.html">Educação Executiva</a>
+        <a href="mercado-financeiro.html">Mercado Financeiro</a>
+        <a href="planejamento-financeiro.html">Planejamento Financeiro</a>
+        <a href="https://calendly.com/soufernando/30min" target="_blank" rel="noopener">Diagnóstico gratuito</a>
+        <a href="https://fernando-doc.streamlit.app/" target="_blank" rel="noopener">Terminal financeiro</a>
+        <a href="https://www.linkedin.com/in/fernandodoc/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://instagram.com/ofernandodoc" target="_blank" rel="noopener">Instagram</a>
+      </nav>
+    </div>
+    <p class="aviso">AVISO: Este é um site pessoal. O investimento em ativos financeiros envolve riscos e desempenho passado não é garantia de resultados futuros. O conteúdo deste site tem caráter meramente informativo e não constitui recomendação de investimento nem oferta de valores mobiliários. O profissional é devidamente certificado e habilitado junto à ANBIMA e à ANCORD. Estratégias de investimento devem ser discutidas de forma individualizada, com profissionais certificados, respeitando o perfil e os objetivos de cada investidor. © 2026 Fernando Claudio.</p>
+  </div>
 </footer>
 
+<a class="wa" href="https://api.whatsapp.com/send/?phone=5516981180180&amp;text=Quero+entender+melhor+o+modelo+fee+based.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">WhatsApp</a>
+
 <script>
-// =====================================================================
-// CONFIGURAÇÃO — cole aqui a URL do seu Google Apps Script Web App
-// (Extensões > Apps Script > Implantar > Nova implantação > App da Web)
-// Exemplo: 'https://script.google.com/macros/s/AKfycb.../exec'
-// =====================================================================
-const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxBr8S5ZiVyeUpcD2dmGifkQfLtS6-WsPs0mAwXtnMTG6Hx5FuufRMYjxCOIQKiQDKYog/exec';
+// ================================================================
+// CHECKOUT — cole aqui o link de compra da Hotmart quando o e-book
+// estiver à venda. Enquanto estiver vazio, os botões viram
+// "Avise-me no lançamento" e abrem o WhatsApp.
+// ================================================================
+var CHECKOUT_URL = 'https://pay.hotmart.com/S108482649Y';
 
-function wireForm(formId, successId, formStateId){
-  var form = document.getElementById(formId);
-  if(!form) return;
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    if(!form.checkValidity()){
-      form.reportValidity();
-      return;
-    }
-    var data = {
-      name: form.querySelector('[name="name"]').value.trim(),
-      email: form.querySelector('[name="email"]').value.trim(),
-      whatsapp: form.querySelector('[name="whatsapp"]').value.trim(),
-      ebook: 'plano-investidor-inteligente',
-      interesse: 'lista-espera-plano-investidor',
-      date: new Date().toISOString()
-    };
-
-    var submitBtn = form.querySelector('.submit-btn');
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Enviando...';
-
-    var showSuccess = function(){
-      document.getElementById(formStateId).style.display = 'none';
-      document.getElementById(successId).style.display = 'block';
-    };
-
-    if(WEBHOOK_URL.indexOf('COLE_AQUI') !== -1){
-      // Webhook ainda não configurado: apenas loga no console para teste local.
-      console.warn('WEBHOOK_URL não configurada. Lead não foi enviado de verdade:', data);
-      showSuccess();
-      return;
-    }
-
-    // 'text/plain' evita o preflight de CORS que o Apps Script não trata bem.
-    // mode:'no-cors' faz o envio funcionar mesmo sem conseguirmos ler a resposta.
-    fetch(WEBHOOK_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {'Content-Type': 'text/plain;charset=utf-8'},
-      body: JSON.stringify(data)
-    })
-    .then(function(){
-      showSuccess();
-    })
-    .catch(function(err){
-      console.error('Erro ao enviar lead:', err);
-      // Mesmo em caso de erro de rede, não travamos a experiência do usuário.
-      showSuccess();
-    })
-    .finally(function(){
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Quero ser avisado';
-    });
+(function(){
+  var botoes = document.querySelectorAll('.js-compra');
+  if(!CHECKOUT_URL){
+    var wa = 'https://api.whatsapp.com/send/?phone=5516981180180&text=' +
+      encodeURIComponent('Olá, Fernando. Quero ser avisado do lançamento do e-book O Plano do Investidor Inteligente.');
+    botoes.forEach(function(a){ a.href = wa; a.target = '_blank'; a.textContent = 'Avise-me no lançamento \u2192'; });
+    document.querySelectorAll('.selo').forEach(function(s){ s.textContent = 'Em breve na Hotmart'; });
+    return;
+  }
+  // Repassa as UTMs da página para o checkout da Hotmart (src e sck são os parâmetros de origem da Hotmart).
+  var p = new URLSearchParams(location.search);
+  var src = p.get('utm_source') || p.get('src');
+  var sck = [p.get('utm_medium'), p.get('utm_campaign')].filter(Boolean).join('_') || p.get('sck');
+  botoes.forEach(function(a){
+    var u = new URL(CHECKOUT_URL);
+    p.forEach(function(v, k){ if(k.indexOf('utm_') === 0) u.searchParams.set(k, v); });
+    if(src) u.searchParams.set('src', src);
+    if(sck) u.searchParams.set('sck', sck);
+    a.href = u.toString();
   });
-}
-
-wireForm('leadForm', 'successState', 'formState');
-wireForm('leadFormFinal', 'successStateFinal', 'formStateFinal');
+})();
 </script>
-
 </body>
 </html>
