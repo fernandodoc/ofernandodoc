@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O Custo Invisível da Sua Carteira — Série Às Claras | Fernando Cláudio</title>
+<meta name="description" content="E-book O Custo Invisível da Sua Carteira: taxas, spreads, comissões e incentivos que raramente aparecem no extrato, explicados termo por termo e com exemplos em reais. Série Às Claras — Critério.">
+<meta property="og:type" content="product">
+<meta property="og:title" content="O Custo Invisível da Sua Carteira — Série Às Claras">
+<meta property="og:description" content="Taxas, spreads, comissões e incentivos que raramente aparecem no extrato.">
+<meta property="og:image" content="img/capa-o-custo-invisivel.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== Documento Auditado — tokens oficiais ===== */
+:root{
+  --bege:#F5F2EF; --papel:#FBF9F7; --caixa:#EDE9E1;
+  --tinta:#2A2824; --tinta-2:#5C5853; --muted:#6B665E;
+  --linha:#D9D3CC; --linha-escura:#46423B;
+  --jade:#1D6B5A; --jade-claro:#A8D5C2;
+  --serif:"Fraunces",Georgia,serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --borda:1px solid #2A2824;
+  --sombra-carimbo:6px 6px 0 #2A2824;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bege);color:var(--tinta);font-family:var(--serif);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-weight:500;letter-spacing:-.01em;margin:0}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.rotulo{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:1px solid var(--tinta);background:var(--tinta);color:var(--bege);cursor:pointer;text-align:center}
+.btn:hover{background:var(--jade-claro);color:var(--tinta)}
+.btn--claro{background:var(--jade-claro);border-color:var(--jade-claro);color:var(--tinta)}
+.btn--claro:hover{background:transparent;color:var(--jade-claro)}
+.selo{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted);margin-top:14px}
+.escuro .selo{color:#bdb7ab}
+
+/* faixa topo */
+.faixa{background:var(--bege);border-bottom:var(--borda);position:sticky;top:0;z-index:20}
+.faixa .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px}
+.faixa .serie{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.faixa .serie b{font-weight:500}
+.faixa .btn{min-height:40px;padding:0 16px;font-size:12px}
+
+/* hero */
+.escuro{background:var(--tinta);color:var(--bege)}
+.hero{padding:80px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.hero .rotulo{color:var(--jade-claro)}
+.hero h1{font-size:clamp(42px,6vw,74px);line-height:1.02;margin:20px 0 24px}
+.hero h1 em{font-style:italic;color:var(--jade-claro)}
+.hero .lead{font-size:20px;line-height:1.5;color:#d6d1c6;max-width:34em;margin-bottom:32px}
+.hero .lead strong{color:var(--bege);font-weight:500}
+.capa{position:relative;justify-self:center;width:min(100%,380px)}
+.capa img{border:1px solid var(--linha-escura);box-shadow:10px 10px 0 var(--jade-claro)}
+
+/* motivo: barras visíveis x invisíveis (da capa) */
+.motivo{display:block;width:100%;height:auto}
+.motivo .vis{fill:var(--jade-claro)}
+.motivo .inv{fill:none;stroke:var(--jade-claro);stroke-width:3;stroke-dasharray:9 7}
+.motivo .eixo{stroke:var(--bege);stroke-width:3}
+
+/* seções */
+.secao{padding:88px 0;border-top:var(--borda)}
+.secao--caixa{background:var(--caixa)}
+.cab{max-width:720px;margin-bottom:48px}
+.cab h2{font-size:clamp(30px,4vw,44px);line-height:1.1;margin-top:12px}
+.cab p{color:var(--tinta-2);font-size:19px;margin-top:16px}
+
+/* problema */
+.problema{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.problema p+p{margin-top:16px}
+.problema .texto p{font-size:19px;color:var(--tinta-2)}
+.problema .texto strong{color:var(--tinta);font-weight:500}
+.conta{background:var(--papel);border:var(--borda);box-shadow:var(--sombra-carimbo)}
+.conta h3{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:14px 20px;border-bottom:var(--borda)}
+.conta dl{margin:0;display:grid;grid-template-columns:1fr auto}
+.conta dt,.conta dd{margin:0;padding:12px 20px;border-bottom:1px solid var(--linha);font-size:16px}
+.conta dd{text-align:right;font-family:var(--mono);font-size:15px;white-space:nowrap}
+.conta .total dt,.conta .total dd{border-bottom:0;font-weight:500;background:var(--jade-claro)}
+.conta .nota{padding:12px 20px;font-family:var(--mono);font-size:11px;letter-spacing:.02em;color:var(--muted);border-top:var(--borda);line-height:1.5}
+
+/* aprender */
+.grade{display:grid;grid-template-columns:repeat(3,1fr);border:var(--borda);background:var(--papel)}
+.item{padding:28px 26px;border-right:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+.item:nth-child(3n){border-right:0}
+.item:nth-last-child(-n+3){border-bottom:0}
+.item .rotulo{color:var(--jade)}
+.item h3{font-size:23px;line-height:1.2;margin:10px 0 10px}
+.item p{font-size:15px;color:var(--tinta-2)}
+
+/* capítulos */
+.capitulos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);column-gap:32px}
+.capitulos li{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--linha);font-size:18px}
+.capitulos li span{font-family:var(--mono);font-size:12px;color:var(--muted);min-width:22px}
+
+/* recebe */
+.recebe{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:center}
+.lista{list-style:none;margin:0;padding:0;border-top:var(--borda)}
+.lista li{padding:14px 0 14px 34px;border-bottom:1px solid var(--linha);position:relative;font-size:17px}
+.lista li::before{content:"\2713";position:absolute;left:4px;top:13px;font-family:var(--mono);color:var(--jade);font-weight:500}
+.recebe .acao{margin-top:32px}
+.escuro .lista li::before{color:var(--jade-claro)}
+
+/* para quem */
+.duas{display:grid;grid-template-columns:1fr 1fr;border:var(--borda)}
+.duas>div{padding:32px}
+.duas>div+div{border-left:var(--borda);background:var(--papel)}
+.duas h3{font-size:26px;margin:10px 0 18px}
+.duas ul{list-style:none;margin:0;padding:0}
+.duas li{padding:12px 0 12px 30px;border-top:1px solid var(--linha);position:relative}
+.duas .sim li::before{content:"\2192";position:absolute;left:2px;color:var(--jade);font-weight:500}
+.duas .nao li::before{content:"\00D7";position:absolute;left:4px;color:var(--muted);font-size:20px;line-height:1.2}
+
+/* autor */
+.autor{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:start}
+.autor img{border:var(--borda);box-shadow:var(--sombra-carimbo);filter:grayscale(.15)}
+.autor h2{font-size:clamp(30px,4vw,40px);margin:12px 0 6px}
+.autor .cargo{font-style:italic;color:var(--tinta-2);font-size:19px;margin-bottom:22px}
+.autor p+p{margin-top:14px}
+.credenciais{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+.credenciais span{font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;border:var(--borda);padding:6px 10px;background:var(--papel)}
+
+/* garantia */
+.garantia{padding:96px 0;text-align:center}
+.garantia .carimbo{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:132px;height:132px;border:2px solid var(--jade-claro);border-radius:50%;font-family:var(--mono);color:var(--jade-claro);text-transform:uppercase;letter-spacing:.08em;font-size:11px;margin-bottom:28px;transform:rotate(-8deg)}
+.garantia .carimbo b{font-family:var(--serif);font-size:44px;font-weight:500;letter-spacing:0;line-height:1}
+.garantia h2{font-size:clamp(30px,4vw,44px);max-width:16em;margin:0 auto 18px}
+.garantia p.txt{max-width:36em;margin:0 auto 36px;color:#d6d1c6;font-size:18px}
+
+footer{padding:40px 0;border-top:var(--borda);font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer p{max-width:60ch}
+
+@media (max-width:960px){
+  .hero .wrap,.problema,.recebe,.autor{grid-template-columns:1fr;gap:40px}
+  .capa{order:-1;width:min(70%,300px)}
+  .grade{grid-template-columns:1fr 1fr}
+  .item:nth-child(3n){border-right:1px solid var(--linha)}
+  .item:nth-child(2n){border-right:0}
+  .item:nth-last-child(-n+3){border-bottom:1px solid var(--linha)}
+  .item:nth-last-child(-n+2){border-bottom:0}
+  .capitulos{grid-template-columns:1fr 1fr}
+  .autor img{max-width:280px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .hero{padding:48px 0 56px}
+  .hero .lead{font-size:18px}
+  .secao{padding:64px 0}
+  .grade,.capitulos,.duas{grid-template-columns:1fr}
+  .item{border-right:0 !important;border-bottom:1px solid var(--linha) !important}
+  .item:last-child{border-bottom:0 !important}
+  .duas>div{padding:24px}
+  .duas>div+div{border-left:0;border-top:var(--borda)}
+  .btn{width:100%}
+  .faixa .btn{width:auto}
+  .faixa .serie span{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="faixa">
+  <div class="wrap">
+    <div class="serie"><b>Série Às Claras</b><span> · Critério</span></div>
+    <a class="btn js-compra" href="https://pay.hotmart.com/Q108480917R?bid=1794587960342" rel="noopener">Comprar e-book</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero escuro">
+  <div class="wrap">
+    <div>
+      <span class="rotulo">Série Às Claras · Critério</span>
+      <h1>O custo invisível da <em>sua carteira.</em></h1>
+      <p class="lead">Você sabe dizer, <strong>em reais</strong>, quanto a sua carteira custa por ano? Taxas, spreads, comissões e incentivos que raramente aparecem no extrato — explicados termo por termo, com exemplos em reais.</p>
+      <a class="btn btn--claro js-compra" href="https://pay.hotmart.com/Q108480917R?bid=1794587960342" rel="noopener">Quero entender o que eu pago &#8594;</a>
+      <p class="selo">Acesso imediato · Garantia incondicional de 7 dias</p>
+    </div>
+    <div class="capa">
+      <img src="img/capa-o-custo-invisivel.jpg" width="640" height="1024" alt="Capa do e-book O Custo Invisível da Sua Carteira, Série Às Claras, de Fernando de Oliveira Cláudio">
+    </div>
+  </div>
+</section>
+
+<!-- ============ O PROBLEMA ============ -->
+<section class="secao">
+  <div class="wrap">
+    <div class="cab">
+      <span class="rotulo">Por que isso importa</span>
+      <h2>O extrato mostra o rendimento. O custo, quase nunca.</h2>
+    </div>
+    <div class="problema">
+      <div class="texto">
+        <p>Parte do que você paga para investir aparece com nome e percentual. <strong>Outra parte vem embutida no preço do produto</strong> ou na forma como o mercado remunera quem distribui cada aplicação — e não aparece em linha nenhuma.</p>
+        <p>Isso não é um problema de pessoas. É uma questão de <strong>estrutura</strong>: o modelo de remuneração do setor define onde estão os incentivos. Quem entende essa estrutura passa a fazer perguntas melhores e a decidir com números, não com impressão.</p>
+        <p>Este livro coloca cada custo às claras, um por um, para você calcular o efeito na sua própria carteira.</p>
+      </div>
+      <div class="conta" aria-label="Exemplo hipotético">
+        <h3>Exemplo hipotético · 10 anos</h3>
+        <dl>
+          <dt>Patrimônio inicial</dt><dd>R$ 1.000.000</dd>
+          <dt>Rendimento bruto anual</dt><dd>10,0%</dd>
+          <dt>Final com 1 p.p. a menos de custo</dt><dd>R$ 2.593.742</dd>
+          <dt>Final com 1 p.p. a mais de custo</dt><dd>R$ 2.367.364</dd>
+          <div class="total" style="display:contents"><dt>Diferença</dt><dd>R$ 226.379</dd></div>
+        </dl>
+        <p class="nota">Simulação ilustrativa, juros compostos anuais, sem impostos e sem aportes. Não representa promessa nem projeção de rentabilidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ O QUE VOCÊ VAI APRENDER ============ -->
+<section class="secao secao--caixa">
+  <div class="wrap">
+    <div class="cab">
+      <span class="rotulo">O que você vai aprender</span>
+      <h2>Seis lentes para enxergar o que a sua carteira realmente custa.</h2>
+    </div>
+    <div class="grade">
+      <div class="item"><span class="rotulo">01</span><h3>Taxas declaradas</h3><p>Administração, performance e corretagem: como ler, somar e comparar o que aparece com nome.</p></div>
+      <div class="item"><span class="rotulo">02</span><h3>Spread</h3><p>O custo que vem embutido no preço — e por que ele não aparece em extrato nenhum.</p></div>
+      <div class="item"><span class="rotulo">03</span><h3>Comissões e rebates</h3><p>Como funciona a remuneração da distribuição e de que forma ela pode influenciar a escolha do produto.</p></div>
+      <div class="item"><span class="rotulo">04</span><h3>Estruturados e incentivos</h3><p>Produtos complexos e incentivos comerciais: o que perguntar antes de aceitar uma recomendação.</p></div>
+      <div class="item"><span class="rotulo">05</span><h3>O custo em reais</h3><p>Exemplos hipotéticos para carteiras de R$ 500 mil, R$ 1 milhão e R$ 3 milhões.</p></div>
+      <div class="item"><span class="rotulo">06</span><h3>Comissionado x fee-based</h3><p>O que muda na prática entre os dois modelos de remuneração — e como isso alinha (ou não) os interesses.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAPÍTULOS ============ -->
+<section class="secao">
+  <div class="wrap">
+    <div class="cab">
+      <span class="rotulo">Sumário</span>
+      <h2>Doze capítulos, termo por termo.</h2>
+    </div>
+    <ol class="capitulos">
+      <li><span>01</span>Taxa de administração</li>
+      <li><span>02</span>Taxa de performance</li>
+      <li><span>03</span>Spread</li>
+      <li><span>04</span>Corretagem</li>
+      <li><span>05</span>Comissões</li>
+      <li><span>06</span>Rebates</li>
+      <li><span>07</span>Produtos estruturados</li>
+      <li><span>08</span>Incentivos comerciais</li>
+      <li><span>09</span>Custo de oportunidade</li>
+      <li><span>10</span>Comissionado x fee-based</li>
+      <li><span>11</span>Quanto custa não saber</li>
+      <li><span>12</span>Próximo passo</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ O QUE VOCÊ RECEBE ============ -->
+<section class="secao escuro" style="border-top:0">
+  <div class="wrap">
+    <svg class="motivo" viewBox="0 0 1180 150" aria-hidden="true" style="margin-bottom:56px">
+      <g transform="translate(40,0)">
+        <rect class="vis" x="0"   y="38" width="100" height="32"/><rect class="inv" x="0"   y="82" width="100" height="44"/>
+        <rect class="vis" x="138" y="22" width="100" height="48"/><rect class="inv" x="138" y="82" width="100" height="62"/>
+        <rect class="vis" x="276" y="44" width="100" height="26"/><rect class="inv" x="276" y="82" width="100" height="36"/>
+        <rect class="vis" x="414" y="8"  width="100" height="62"/><rect class="inv" x="414" y="82" width="100" height="66"/>
+        <rect class="vis" x="552" y="30" width="100" height="40"/><rect class="inv" x="552" y="82" width="100" height="50"/>
+        <rect class="vis" x="690" y="50" width="100" height="20"/><rect class="inv" x="690" y="82" width="100" height="30"/>
+        <rect class="vis" x="828" y="26" width="100" height="44"/><rect class="inv" x="828" y="82" width="100" height="56"/>
+        <rect class="vis" x="966" y="40" width="100" height="30"/><rect class="inv" x="966" y="82" width="100" height="40"/>
+      </g>
+      <line class="eixo" x1="0" y1="76" x2="1180" y2="76"/>
+    </svg>
+    <div class="recebe">
+      <div class="cab" style="margin:0">
+        <span class="rotulo" style="color:var(--jade-claro)">O que você recebe</span>
+        <h2>Um material para consultar sempre que for revisar a carteira.</h2>
+        <p style="color:#d6d1c6">O acesso chega no seu e-mail logo após a confirmação do pagamento.</p>
+      </div>
+      <div>
+        <ul class="lista" style="border-color:var(--linha-escura)">
+          <li style="border-color:var(--linha-escura)">E-book completo em PDF e ePub</li>
+          <li style="border-color:var(--linha-escura)">12 capítulos curtos e diretos</li>
+          <li style="border-color:var(--linha-escura)">Exemplos em reais, com valores hipotéticos</li>
+          <li style="border-color:var(--linha-escura)">Quadros de destaque com os pontos de atenção</li>
+          <li style="border-color:var(--linha-escura)">Exercícios e checklist para aplicar na sua carteira</li>
+          <li style="border-color:var(--linha-escura)">Glossário e referências normativas</li>
+        </ul>
+        <div class="acao">
+          <a class="btn btn--claro js-compra" href="https://pay.hotmart.com/Q108480917R?bid=1794587960342" rel="noopener">Comprar e-book agora &#8594;</a>
+          <p class="selo">Pagamento e entrega pela Hotmart</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARA QUEM ============ -->
+<section class="secao">
+  <div class="wrap">
+    <div class="cab">
+      <span class="rotulo">Este livro é para você?</span>
+      <h2>Para quem já investe e quer saber, com números, quanto isso custa.</h2>
+    </div>
+    <div class="duas">
+      <div class="sim">
+        <span class="rotulo" style="color:var(--jade)">Para quem é</span>
+        <h3>É para você se…</h3>
+        <ul>
+          <li>Tem R$ 300 mil ou mais investidos e nunca fez essa conta a fundo</li>
+          <li>Já foi perguntado sobre as taxas que paga e não soube responder com precisão</li>
+          <li>Quer entender se o modelo de remuneração da sua carteira está alinhado ao seu interesse</li>
+          <li>Prefere decidir com critério, e não por indicação ou impressão</li>
+        </ul>
+      </div>
+      <div class="nao">
+        <span class="rotulo" style="color:var(--muted)">Não é para quem</span>
+        <h3>Não é para você se…</h3>
+        <ul>
+          <li>Procura dica de onde investir ou lista de produtos</li>
+          <li>Espera promessa de rentabilidade ou ganho rápido</li>
+          <li>Busca culpados: o livro trata do modelo, não de pessoas ou empresas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AUTOR ============ -->
+<section class="secao secao--caixa">
+  <div class="wrap autor">
+    <img src="img/fernando-claudio.jpg" width="500" height="500" alt="Fernando de Oliveira Cláudio">
+    <div>
+      <span class="rotulo">Quem escreve</span>
+      <h2>Fernando de Oliveira Cláudio</h2>
+      <p class="cargo">Educador financeiro e consultor corporativo</p>
+      <p>Atua na área comercial desde 2000 e no mercado financeiro desde 2023. Formado em Relações Internacionais, com MBA em Gestão em Vendas pela Fundace/USP, onde também foi professor-tutor do MBA Gestão Estratégica em Vendas.</p>
+      <p>Trabalha com transparência radical sobre como funciona a remuneração no mercado financeiro. A missão é contribuir para um mercado mais transparente — e a Série Às Claras existe para isso.</p>
+      <div class="credenciais">
+        <span>ANBIMA CPA</span><span>ANBIMA C-PRO R</span><span>ANBIMA C-PRO I</span><span>ANCORD</span><span>MBA Fundace/USP</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GARANTIA ============ -->
+<section class="garantia escuro">
+  <div class="wrap">
+    <div class="carimbo" aria-hidden="true"><b>7</b>dias</div>
+    <h2>Garantia incondicional de 7 dias.</h2>
+    <p class="txt">Leia, faça os exercícios e aplique na sua carteira. Se achar que o livro não trouxe clareza, peça o reembolso integral pela Hotmart em até 7 dias, sem burocracia e sem precisar explicar o motivo.</p>
+    <a class="btn btn--claro js-compra" href="https://pay.hotmart.com/Q108480917R?bid=1794587960342" rel="noopener">Garantir meu exemplar &#8594;</a>
+    <p class="selo">Acesso imediato · Pagamento seguro pela Hotmart</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Conteúdo educacional. Não constitui recomendação de investimento. Rentabilidade passada não é garantia de rentabilidade futura. Os exemplos numéricos são hipotéticos.</p>
+    <p>© 2026 Série Às Claras · Fernando de Oliveira Cláudio</p>
+  </div>
+</footer>
+
+<script>
+// Repassa as UTMs da página para o checkout da Hotmart (src e sck são os parâmetros de origem da Hotmart).
+(function(){
+  var p = new URLSearchParams(location.search);
+  var src = p.get('utm_source') || p.get('src');
+  var sck = [p.get('utm_medium'), p.get('utm_campaign')].filter(Boolean).join('_') || p.get('sck');
+  document.querySelectorAll('.js-compra').forEach(function(a){
+    var u = new URL(a.href);
+    p.forEach(function(v, k){ if(k.indexOf('utm_') === 0) u.searchParams.set(k, v); });
+    if(src) u.searchParams.set('src', src);
+    if(sck) u.searchParams.set('sck', sck);
+    a.href = u.toString();
+  });
+})();
+</script>
+</body>
+</html>
