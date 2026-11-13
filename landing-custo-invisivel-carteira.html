@@ -8,10 +8,11 @@
 <meta property="og:type" content="product">
 <meta property="og:title" content="O Custo Invisível da Sua Carteira — Série Às Claras">
 <meta property="og:description" content="Taxas, spreads, comissões e incentivos que raramente aparecem no extrato.">
-<meta property="og:image" content="img/capa-o-custo-invisivel.jpg">
+<meta property="og:image" content="https://www.fernandoclaudio.com.br/capa-o-custo-invisivel.jpg">
+<link rel="canonical" href="https://www.fernandoclaudio.com.br/landing-custo-invisivel-carteira.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ===== Documento Auditado — tokens oficiais ===== */
 :root{
@@ -44,12 +45,6 @@ p{margin:0}
 .selo{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted);margin-top:14px}
 .escuro .selo{color:#bdb7ab}
 
-/* faixa topo */
-.faixa{background:var(--bege);border-bottom:var(--borda);position:sticky;top:0;z-index:20}
-.faixa .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px}
-.faixa .serie{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-.faixa .serie b{font-weight:500}
-.faixa .btn{min-height:40px;padding:0 16px;font-size:12px}
 
 /* hero */
 .escuro{background:var(--tinta);color:var(--bege)}
@@ -90,7 +85,7 @@ p{margin:0}
 .conta .nota{padding:12px 20px;font-family:var(--mono);font-size:11px;letter-spacing:.02em;color:var(--muted);border-top:var(--borda);line-height:1.5}
 
 /* aprender */
-.grade{display:grid;grid-template-columns:repeat(3,1fr);border:var(--borda);background:var(--papel)}
+.grade{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:var(--borda);background:var(--papel)}
 .item{padding:28px 26px;border-right:1px solid var(--linha);border-bottom:1px solid var(--linha)}
 .item:nth-child(3n){border-right:0}
 .item:nth-last-child(-n+3){border-bottom:0}
@@ -132,14 +127,11 @@ p{margin:0}
 
 /* garantia */
 .garantia{padding:96px 0;text-align:center}
-.garantia .carimbo{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:132px;height:132px;border:2px solid var(--jade-claro);border-radius:50%;font-family:var(--mono);color:var(--jade-claro);text-transform:uppercase;letter-spacing:.08em;font-size:11px;margin-bottom:28px;transform:rotate(-8deg)}
+.garantia .carimbo{padding:0;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:132px;height:132px;border:2px solid var(--jade-claro);border-radius:50%;font-family:var(--mono);color:var(--jade-claro);text-transform:uppercase;letter-spacing:.08em;font-size:11px;margin-bottom:28px;transform:rotate(-8deg)}
 .garantia .carimbo b{font-family:var(--serif);font-size:44px;font-weight:500;letter-spacing:0;line-height:1}
 .garantia h2{font-size:clamp(30px,4vw,44px);max-width:16em;margin:0 auto 18px}
 .garantia p.txt{max-width:36em;margin:0 auto 36px;color:#d6d1c6;font-size:18px}
 
-footer{padding:40px 0;border-top:var(--borda);font-size:14px;color:var(--muted)}
-footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-footer p{max-width:60ch}
 
 @media (max-width:960px){
   .hero .wrap,.problema,.recebe,.autor{grid-template-columns:1fr;gap:40px}
@@ -163,23 +155,68 @@ footer p{max-width:60ch}
   .duas>div{padding:24px}
   .duas>div+div{border-left:0;border-top:var(--borda)}
   .btn{width:100%}
-  .faixa .btn{width:auto}
-  .faixa .serie span{display:none}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ===== Topo, subnavegação, rodapé e WhatsApp (padrão do site) ===== */
+.topo{border-bottom:1px solid var(--tinta);background:var(--bege);position:sticky;top:0;z-index:20}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.marca{font-weight:600;text-decoration:none;font-size:18px;white-space:nowrap}
+.marca span{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--tinta-2);margin-left:6px}
+.topo nav{display:flex;gap:4px}
+.topo nav a{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;padding:8px 12px;border:1px solid transparent}
+.topo nav a:hover{border-color:var(--tinta)}
+.subnav{border-bottom:1px solid var(--linha);background:var(--papel)}
+.subnav .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.subnav .wrap::-webkit-scrollbar{display:none}
+.subnav a{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;padding:12px 12px;white-space:nowrap;color:var(--tinta-2);border-bottom:2px solid transparent}
+.subnav a:hover{color:var(--tinta);border-bottom-color:var(--jade)}
+.subnav a[aria-current]{color:var(--tinta);border-bottom-color:var(--jade)}
+footer{border-top:1px solid var(--tinta);padding:36px 0 48px;font-size:14px;color:var(--tinta-2)}
+footer .linha{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:18px}
+footer nav{display:flex;gap:18px;flex-wrap:wrap}
+footer nav a{text-decoration:none;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+footer nav a:hover{color:var(--jade)}
+footer .aviso{font-size:13px;line-height:1.7;max-width:900px;margin:0}
+.wa{position:fixed;right:20px;bottom:20px;z-index:30;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;background:var(--jade);color:var(--bege);text-decoration:none;padding:12px 16px;border:1px solid var(--jade)}
+.wa:hover{background:var(--tinta);border-color:var(--tinta)}
+@media (max-width:1024px){.subnav .wrap{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent);padding-right:48px}}
+@media (max-width:1024px), (pointer:coarse){
+  .topo nav a,.marca{min-height:44px;display:inline-flex;align-items:center}
+  .subnav a{min-height:44px;display:inline-flex;align-items:center}
+  footer nav a{min-height:44px;display:inline-flex;align-items:center}
+}
+@media (max-width:720px){
+  .topo{position:static}
+  .topo .wrap{height:auto;flex-direction:column;align-items:flex-start;padding-top:12px;padding-bottom:10px;gap:8px}
+  .topo nav{flex-wrap:wrap}
+  .topo nav a{padding:0 10px;font-size:11px;border-color:var(--linha)}
+  .wa{right:12px;bottom:12px;padding:10px 12px}
+}
 </style>
 </head>
 <body>
 
-<header class="fc-topo">
+<header class="topo">
   <div class="wrap">
-    <a class="marca" href="index.html">Fernando Cláudio <span>// FC</span></a>
-    <div class="fc-acoes">
-      <a class="voltar" href="ebooks.html">Todos os e-books</a>
-      <a class="comprar-topo js-hotmart" href="https://go.hotmart.com/K108472406E" rel="noopener">Comprar e-book</a>
-    </div>
+    <a class="marca" href="index.html">Fernando Claudio <span>// FC</span></a>
+    <nav aria-label="Áreas">
+      <a href="educacao-executiva.html">Educação Executiva</a>
+      <a href="mercado-financeiro.html">Mercado Financeiro</a>
+      <a href="planejamento-financeiro.html">Planejamento Financeiro</a>
+    </nav>
   </div>
 </header>
+<nav class="subnav" aria-label="Conteúdo">
+  <div class="wrap">
+    <a href="index.html">Início</a>
+    <a href="ebooks.html" aria-current="page">E-books</a>
+    <a href="artigos.html">Artigos</a>
+    <a href="planejamento-financeiro.html#segunda-opiniao">Segunda opinião</a>
+    <a href="planejamento-financeiro.html#faq">FAQ</a>
+  </div>
+</nav>
+
 <!-- ============ HERO ============ -->
 <section class="hero escuro">
   <div class="wrap">
@@ -367,10 +404,24 @@ footer p{max-width:60ch}
 
 <footer>
   <div class="wrap">
-    <p>Conteúdo educacional. Não constitui recomendação de investimento. Rentabilidade passada não é garantia de rentabilidade futura. Os exemplos numéricos são hipotéticos.</p>
-    <p>© 2026 Série Às Claras · Fernando de Oliveira Cláudio</p>
+    <div class="linha">
+      <span>Fernando Claudio · Ribeirão Preto/SP · ofernandodoc@gmail.com</span>
+      <nav aria-label="Rodapé">
+        <a href="index.html">Início</a>
+        <a href="educacao-executiva.html">Educação Executiva</a>
+        <a href="mercado-financeiro.html">Mercado Financeiro</a>
+        <a href="planejamento-financeiro.html">Planejamento Financeiro</a>
+        <a href="https://calendly.com/soufernando/30min" target="_blank" rel="noopener">Diagnóstico gratuito</a>
+        <a href="https://fernando-doc.streamlit.app/" target="_blank" rel="noopener">Terminal financeiro</a>
+        <a href="https://www.linkedin.com/in/fernandodoc/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://instagram.com/ofernandodoc" target="_blank" rel="noopener">Instagram</a>
+      </nav>
+    </div>
+    <p class="aviso">AVISO: Este é um site pessoal. O investimento em ativos financeiros envolve riscos e desempenho passado não é garantia de resultados futuros. O conteúdo deste site tem caráter meramente informativo e não constitui recomendação de investimento nem oferta de valores mobiliários. O profissional é devidamente certificado e habilitado junto à ANBIMA e à ANCORD. Estratégias de investimento devem ser discutidas de forma individualizada, com profissionais certificados, respeitando o perfil e os objetivos de cada investidor. © 2026 Fernando Claudio.</p>
   </div>
 </footer>
+
+<a class="wa" href="https://api.whatsapp.com/send/?phone=5516981180180&amp;text=Quero+entender+melhor+o+modelo+fee+based.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">WhatsApp</a>
 
 <script>
 // Repassa as UTMs da página para o checkout da Hotmart (src e sck são os parâmetros de origem da Hotmart).
